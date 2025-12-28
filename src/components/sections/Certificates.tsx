@@ -3,34 +3,35 @@
 import { motion } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const certificates = [
     {
         title: "Python for Data Science",
         issuer: "NPTEL Online Certification",
-        link: "/New-portfolio/certs/nptel-python.png",
-        localImage: "/New-portfolio/certs/nptel-python.png",
+        link: "/certs/nptel-python.png",
+        localImage: "/certs/nptel-python.png",
         highlight: true,
     },
     {
         title: "Front End Technologies",
         issuer: "IBM | Naan Mudhalvan (TNSDC)",
-        link: "/New-portfolio/certs/ibm-frontend.jpg",
-        localImage: "/New-portfolio/certs/ibm-frontend.jpg",
+        link: "/certs/ibm-frontend.jpg",
+        localImage: "/certs/ibm-frontend.jpg",
         highlight: true,
     },
     {
         title: "EBPL Course",
         issuer: "HCL | Naan Mudhalvan (TNSDC)",
-        link: "/New-portfolio/certs/hcl-ebpl.jpg",
-        localImage: "/New-portfolio/certs/hcl-ebpl.jpg",
+        link: "/certs/hcl-ebpl.jpg",
+        localImage: "/certs/hcl-ebpl.jpg",
         highlight: true,
     },
     {
         title: "Full-Stack Development 101",
         issuer: "Simplilearn SkillUp!",
-        link: "/New-portfolio/certs/simplilearn-fullstack.png",
-        localImage: "/New-portfolio/certs/simplilearn-fullstack.png",
+        link: "/certs/simplilearn-fullstack.png",
+        localImage: "/certs/simplilearn-fullstack.png",
         highlight: true,
     },
     {

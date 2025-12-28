@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import ParticleBackground from "./ParticleBackground";
 import { MousePointer2, Download, Github, Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -72,8 +73,8 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 1.5 }}
                     className="flex flex-wrap items-center justify-center gap-6"
                 >
-                    <a
-                        href="/New-portfolio/resume.pdf"
+                    <Link
+                        href="/resume.pdf"
                         download
                         className="group relative px-8 py-3 rounded-full bg-white text-[#000] font-bold overflow-hidden transition-all hover:pr-12 hover:bg-accent-blue hover:text-white border border-white"
                     >
@@ -84,7 +85,7 @@ export default function Hero() {
                         <span className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all">
                             &rarr;
                         </span>
-                    </a>
+                    </Link>
 
                     <div className="flex items-center gap-4">
                         <SocialIcon href="https://github.com/mr-vvm-2005" icon={<Github size={20} />} />
