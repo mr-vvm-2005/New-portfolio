@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 interface Project {
     title: string;
@@ -18,21 +19,21 @@ const projects: Project[] = [
         description: "A comprehensive platform for booking dental appointments with real-time availability and user-friendly interface.",
         link: "https://dental-care-appointment-booking.vercel.app/",
         tags: ["React", "CSS", "Vercel"],
-        image: "/previews/dental.png",
+        image: getAssetPath("/previews/dental.png"),
     },
     {
         title: "College ERP Portal (Clone)",
         description: "A full-featured ERP system clone for college management including student and faculty modules.",
         link: "https://mr-vvm-2005.github.io/my-college-erp/",
         tags: ["HTML", "CSS", "JavaScript"],
-        image: "/previews/erp.png",
+        image: getAssetPath("/previews/erp.png"),
     },
     {
         title: "Simple Resume Builder",
         description: "A clean and efficient tool for generating professional resumes in minutes with downloadable PDF feature.",
         link: "https://mr-vvm-2005.github.io/Simple-resume-builder-project/",
         tags: ["JavaScript", "HTML", "Canvas"],
-        image: "/previews/resume.png",
+        image: getAssetPath("/previews/resume.png"),
     },
 ];
 

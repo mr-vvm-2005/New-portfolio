@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { User, MapPin, Calendar, Globe, Languages, Heart, Briefcase } from "lucide-react";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 export default function About() {
     const details = [
@@ -47,7 +48,7 @@ export default function About() {
 
                                 <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl">
                                     <Image
-                                        src="/profile.jpg"
+                                        src={getAssetPath("/profile.jpg")}
                                         alt="Mr.vvm"
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
