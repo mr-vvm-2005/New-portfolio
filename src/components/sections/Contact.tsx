@@ -6,11 +6,36 @@ import { useState } from "react";
 
 export default function Contact() {
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000);
+        setIsSubmitting(true);
+        setError("");
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("https://formspree.io/f/xanyqbvv", {
+                method: "POST",
+                body: formData,
+                headers: { Accept: "application/json" },
+            });
+
+            if (response.ok) {
+                setIsSubmitted(true);
+                form.reset();
+                setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                setError("Failed to send. Please email me directly.");
+            }
+        } catch (err) {
+            setError("Network error. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -67,24 +92,31 @@ export default function Contact() {
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <InputGroup label="Full Name" placeholder="John Doe" />
-                                    <InputGroup label="Email Address" placeholder="john@example.com" type="email" />
+                                    <InputGroup label="Full Name" placeholder="John Doe" name="name" />
+                                    <InputGroup label="Email Address" placeholder="john@example.com" type="email" name="email" />
                                 </div>
-                                <InputGroup label="Subject" placeholder="Inquiry about new project" />
+                                <InputGroup label="Subject" placeholder="Inquiry about new project" name="subject" />
                                 <div className="space-y-2">
                                     <label className="text-xs uppercase tracking-widest text-white/40 ml-1">Message</label>
                                     <textarea
+                                        name="message"
                                         rows={5}
                                         className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-blue/50 transition-all resize-none text-white"
                                         placeholder="Tell me more about your idea..."
                                         required
                                     />
                                 </div>
+                                {error && (
+                                    <div className="text-red-400 text-sm text-center bg-red-500/10 border border-red-500/20 rounded-xl p-3">
+                                        {error}
+                                    </div>
+                                )}
                                 <button
                                     type="submit"
-                                    className="w-full py-4 rounded-2xl bg-white text-[#000] font-bold uppercase tracking-widest hover:bg-accent-blue hover:text-white transition-all transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 border border-white"
+                                    disabled={isSubmitting}
+                                    className="w-full py-4 rounded-2xl bg-white text-[#000] font-bold uppercase tracking-widest hover:bg-accent-blue hover:text-white transition-all transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 border border-white disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Send Message <Send size={18} />
+                                    {isSubmitting ? "Sending..." : "Send Message"} <Send size={18} />
                                 </button>
                             </form>
                         )}
@@ -127,12 +159,13 @@ function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
     );
 }
 
-function InputGroup({ label, placeholder, type = "text" }: { label: string; placeholder: string; type?: string }) {
+function InputGroup({ label, placeholder, type = "text", name }: { label: string; placeholder: string; type?: string; name: string }) {
     return (
         <div className="space-y-2">
             <label className="text-xs uppercase tracking-widest text-white/40 ml-1">{label}</label>
             <input
                 type={type}
+                name={name}
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-blue/50 transition-all text-white"
                 placeholder={placeholder}
