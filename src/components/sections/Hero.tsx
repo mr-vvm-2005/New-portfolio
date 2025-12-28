@@ -73,7 +73,7 @@ export default function Hero() {
                     className="flex flex-wrap items-center justify-center gap-6"
                 >
                     <a
-                        href="/resume.pdf"
+                        href="/New-portfolio/resume.pdf"
                         download
                         className="group relative px-8 py-3 rounded-full bg-white text-[#000] font-bold overflow-hidden transition-all hover:pr-12 hover:bg-accent-blue hover:text-white border border-white"
                     >
