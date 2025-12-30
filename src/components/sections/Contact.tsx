@@ -9,27 +9,43 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState("");
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
         setError("");
 
         const formData = new FormData(e.currentTarget);
-        const name = formData.get("name") as string;
-        const email = formData.get("email") as string;
-        const subject = formData.get("subject") as string || "Portfolio Contact";
-        const message = formData.get("message") as string;
 
-        // Construct the email body
-        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        // Use FormSubmit.co for easy email handling without an explicit custom key
+        // Instructions: 
+        // 1. After the FIRST submission, go to your inbox (pkvetrivelvvm@gmail.com).
+        // 2. You will see an email from FormSubmit. Confirm it to activate the form.
+        // 3. Subsequent messages will arrive instantly.
 
-        // Open the user's email client
-        window.location.href = `mailto:pkvetrivelvvm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/pkvetrivelvvm@gmail.com", {
+                method: "POST",
+                body: formData
+            });
 
-        setIsSubmitted(true);
-        e.currentTarget.reset();
-        setIsSubmitting(false);
-        setTimeout(() => setIsSubmitted(false), 5000);
+            const data = await response.json();
+
+            if (response.ok) {
+                setIsSubmitted(true);
+                e.currentTarget.reset();
+                setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                // If the AJAX fails, fallback to simple form submission which handles activation better
+                // But generally AJAX works if email is valid.
+                setError("Something went wrong. Please check your email for an activation link if this is your first time.");
+                console.error("Form submission error", data);
+            }
+        } catch (err) {
+            setError("Failed to send message. Please check your connection.");
+            console.error("Form error:", err);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (

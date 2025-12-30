@@ -13,7 +13,51 @@ export default function ResumePage() {
     };
 
     return (
-        <div className="min-h-screen bg-white text-black p-8 md:p-16">
+        <div className="min-h-screen bg-white text-black p-8 md:p-16 print:p-0">
+            <style jsx global>{`
+                @media print {
+                    @page {
+                        size: A4;
+                        margin: 0;
+                    }
+                    body {
+                        background: white;
+                        print-color-adjust: exact;
+                        -webkit-print-color-adjust: exact;
+                    }
+                    #resume-content {
+                        margin: 0;
+                        padding: 1.5cm 2cm;
+                        max-width: none !important;
+                        width: 100% !important;
+                        box-shadow: none !important;
+                    }
+                    /* Ensure grid works in print */
+                    .print\\:grid-cols-3 {
+                        display: grid !important;
+                        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                    }
+                    .print\\:col-span-1 {
+                        grid-column: span 1 / span 1 !important;
+                    }
+                    .print\\:col-span-2 {
+                        grid-column: span 2 / span 2 !important;
+                    }
+                    
+                    /* Typography adjustments for print cleanliness */
+                    h1 { font-size: 28pt !important; margin-bottom: 0.2cm !important; }
+                    h2 { font-size: 14pt !important; margin-top: 0.5cm !important; margin-bottom: 0.3cm !important; }
+                     p, li, span { font-size: 10pt !important; line-height: 1.4 !important; }
+                    
+                    /* Hide unnecessary elements */
+                    .print\\:hidden { display: none !important; }
+                    
+                    /* Avoid awkward page breaks */
+                    h2 { break-after: avoid; page-break-after: avoid; }
+                    .mb-4, .mb-6, li { break-inside: avoid; page-break-inside: avoid; }
+                    section { break-inside: auto; page-break-inside: auto; }
+                }
+            `}</style>
             {/* Print Button (Hidden when printing) */}
             <div className="fixed bottom-8 right-8 print:hidden z-50">
                 <button
@@ -63,9 +107,9 @@ export default function ResumePage() {
                 </header>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-8">
                     {/* Left Column (Skills, Education, etc) */}
-                    <div className="md:col-span-1 space-y-8">
+                    <div className="md:col-span-1 print:col-span-1 space-y-8">
                         <Section title="Education">
                             <div className="mb-4">
                                 <h3 className="font-bold">B.Tech - Information Technology</h3>
@@ -106,7 +150,7 @@ export default function ResumePage() {
                     </div>
 
                     {/* Right Column (Experience, Projects) */}
-                    <div className="md:col-span-2 space-y-8">
+                    <div className="md:col-span-2 print:col-span-2 space-y-8">
                         <Section title="Summary">
                             <p className="text-gray-700 leading-relaxed text-sm">
                                 Aspiring Full Stack Developer with a passion for building user-centric, high-performance web applications.
