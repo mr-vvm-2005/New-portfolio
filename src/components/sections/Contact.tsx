@@ -9,33 +9,27 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState("");
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
         setError("");
 
-        const form = e.currentTarget;
-        const formData = new FormData(form);
+        const formData = new FormData(e.currentTarget);
+        const name = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        const subject = formData.get("subject") as string || "Portfolio Contact";
+        const message = formData.get("message") as string;
 
-        try {
-            const response = await fetch("https://formspree.io/f/xanyqbvv", {
-                method: "POST",
-                body: formData,
-                headers: { Accept: "application/json" },
-            });
+        // Construct the email body
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
-            if (response.ok) {
-                setIsSubmitted(true);
-                form.reset();
-                setTimeout(() => setIsSubmitted(false), 5000);
-            } else {
-                setError("Failed to send. Please email me directly.");
-            }
-        } catch (err) {
-            setError("Network error. Please try again.");
-        } finally {
-            setIsSubmitting(false);
-        }
+        // Open the user's email client
+        window.location.href = `mailto:pkvetrivelvvm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        setIsSubmitted(true);
+        e.currentTarget.reset();
+        setIsSubmitting(false);
+        setTimeout(() => setIsSubmitted(false), 5000);
     };
 
     return (
