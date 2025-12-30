@@ -21,7 +21,7 @@ const timelineData: TimelineItem[] = [
         title: "Full Stack Development Intern",
         subtitle: "IPCS Global",
         location: "Tirunelveli",
-        date: "2023 (1 Month)",
+        date: "01.07.2025 - 30.07.2025",
         details: "Working on real-world projects, gaining hands-on experience in both frontend and backend development.",
         icon: <Briefcase size={18} />
     },

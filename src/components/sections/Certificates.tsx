@@ -8,6 +8,13 @@ import { getAssetPath } from "@/lib/utils";
 
 const certificates = [
     {
+        title: "Internship Certificate",
+        issuer: "IPCS Global",
+        link: getAssetPath("/certs/ipcs-internship.jpg"),
+        localImage: getAssetPath("/certs/ipcs-internship.jpg"),
+        highlight: true,
+    },
+    {
         title: "Python for Data Science",
         issuer: "NPTEL Online Certification",
         link: getAssetPath("/certs/nptel-python.png"),

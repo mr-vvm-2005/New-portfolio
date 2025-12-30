@@ -119,7 +119,7 @@ export default function ResumePage() {
                             <div className="mb-6">
                                 <div className="flex justify-between items-baseline mb-1">
                                     <h3 className="font-bold text-lg">Full Stack Developer Intern</h3>
-                                    <span className="text-xs font-mono text-gray-500">2023 (1 Month)</span>
+                                    <span className="text-xs font-mono text-gray-500">01.07.2025 - 30.07.2025</span>
                                 </div>
                                 <div className="text-sm font-semibold text-accent-blue mb-2">IPCS Global, Tirunelveli</div>
                                 <ul className="list-disc ml-4 text-sm text-gray-700 space-y-2">
