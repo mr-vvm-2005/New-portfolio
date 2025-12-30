@@ -99,6 +99,7 @@ export default function ResumePage() {
                                 <li>Web Development</li>
                                 <li>UI/UX Design</li>
                                 <li>AI & Machine Learning</li>
+                                <li>AI Prompting</li>
                                 <li>AR/VR Technology</li>
                             </ul>
                         </Section>
@@ -149,10 +150,12 @@ export default function ResumePage() {
 
                         <Section title="Certifications">
                             <ul className="list-disc ml-4 text-sm text-gray-700 space-y-2">
-                                <li><span className="font-semibold">NxtWave CCBP 4.0 Academy</span> - Full Stack Development Trainee</li>
-                                <li><span className="font-semibold">JP Morgan Chase & Co.</span> - Software Engineering Virtual Experience</li>
-                                <li><span className="font-semibold">University of Helsinki</span> - Elements of AI</li>
-                                <li><span className="font-semibold">Infosys Springboard</span> - Python for Data Science</li>
+                                <li><span className="font-semibold">Python for Data Science</span> - NPTEL Online Certification</li>
+                                <li><span className="font-semibold">Front End Technologies</span> - IBM | Naan Mudhalvan</li>
+                                <li><span className="font-semibold">Software Engineering Job Simulation</span> - JP Morgan Chase & Co.</li>
+                                <li><span className="font-semibold">Elements of AI</span> - University of Helsinki</li>
+                                <li><span className="font-semibold">Full-Stack Development 101</span> - Simplilearn</li>
+                                <li><span className="font-semibold">EBPL Course</span> - HCL | Naan Mudhalvan</li>
                             </ul>
                         </Section>
                     </div>

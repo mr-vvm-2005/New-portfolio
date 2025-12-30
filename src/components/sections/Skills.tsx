@@ -13,6 +13,7 @@ const skills = [
     { name: "SQL", category: "Database", level: 75, color: "#4479A1" },
     { name: "Node.js", category: "Backend", level: 70, color: "#339933" },
     { name: "Git", category: "Tools", level: 85, color: "#F05032" },
+    { name: "AI Prompting", category: "Trends", level: 90, color: "#8B5CF6" },
 ];
 
 export default function Skills() {
