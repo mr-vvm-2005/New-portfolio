@@ -92,6 +92,7 @@ export default function Hero() {
                         <SocialIcon href="https://github.com/mr-vvm-2005" icon={<Github size={20} />} />
                         <SocialIcon href="https://www.linkedin.com/in/mrvvmoffical2005" icon={<Linkedin size={20} />} />
                         <SocialIcon href="https://x.com/vetrivelvvm" icon={<Twitter size={20} />} />
+                        <SocialIcon href="https://www.instagram.com/mr.vvm_official/" icon={<Instagram size={20} />} />
                     </div>
                 </motion.div>
             </div>
