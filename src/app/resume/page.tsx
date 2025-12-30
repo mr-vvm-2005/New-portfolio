@@ -68,14 +68,14 @@ export default function ResumePage() {
                     <div className="md:col-span-1 space-y-8">
                         <Section title="Education">
                             <div className="mb-4">
-                                <h3 className="font-bold">B.Tech - Artificial Intelligence & Data Science</h3>
-                                <p className="text-gray-600 text-sm">Anna University (PSN College)</p>
-                                <p className="text-gray-500 text-xs mt-1">2022 - 2026 (Creating)</p>
+                                <h3 className="font-bold">B.E. Information Technology</h3>
+                                <p className="text-gray-600 text-sm">Dr. Sivanthi Aditanar College of Engineering</p>
+                                <p className="text-gray-500 text-xs mt-1">2023 - 2027</p>
                             </div>
                             <div>
-                                <h3 className="font-bold">HSC</h3>
-                                <p className="text-gray-600 text-sm">Everest Mariappa Nadar Higher Secondary School</p>
-                                <p className="text-gray-500 text-xs mt-1">2021 - 2022</p>
+                                <h3 className="font-bold">Schooling (HSC)</h3>
+                                <p className="text-gray-600 text-sm">Shriram Vidhalaya Higher Secondary School</p>
+                                <p className="text-gray-500 text-xs mt-1">Completion: 2023</p>
                             </div>
                         </Section>
 
@@ -131,19 +131,19 @@ export default function ResumePage() {
 
                         <Section title="Key Projects">
                             <Project
-                                title="Modern Portfolio Website"
-                                tech="Next.js, Tailwind CSS, Framer Motion"
-                                desc="A responsive, high-performance personal portfolio featuring advanced animations, glassmorphic design, and SEO optimization."
+                                title="Dental Care Appointment Booking"
+                                tech="React, CSS, Vercel"
+                                desc="A comprehensive platform for booking dental appointments with real-time availability and user-friendly interface."
                             />
                             <Project
-                                title="Frameory - AR Gifting App"
-                                tech="React, Three.js, WebAR"
-                                desc="An innovative augmented reality web application allowing users to scan art prints to reveal video memories."
-                            />
-                            <Project
-                                title="College ERP Clone"
+                                title="College ERP Portal (Clone)"
                                 tech="HTML, CSS, JavaScript"
-                                desc="A comprehensive clone of a college ERP system managing student attendance, grades, and schedules."
+                                desc="A full-featured ERP system clone for college management including student and faculty modules."
+                            />
+                            <Project
+                                title="Simple Resume Builder"
+                                tech="JavaScript, HTML, Canvas"
+                                desc="A clean and efficient tool for generating professional resumes in minutes with downloadable PDF feature."
                             />
                         </Section>
 
