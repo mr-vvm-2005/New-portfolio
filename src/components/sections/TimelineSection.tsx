@@ -21,7 +21,7 @@ const timelineData: TimelineItem[] = [
         title: "Full Stack Development Intern",
         subtitle: "IPCS Global",
         location: "Tirunelveli",
-        date: "Current",
+        date: "2023 (1 Month)",
         details: "Working on real-world projects, gaining hands-on experience in both frontend and backend development.",
         icon: <Briefcase size={18} />
     },
@@ -38,7 +38,7 @@ const timelineData: TimelineItem[] = [
     {
         id: "edu-1",
         type: "Education",
-        title: "B.E. Information Technology",
+        title: "B.Tech - Information Technology",
         subtitle: "Dr. Sivanthi Aditanar College of Engineering",
         location: "Tiruchendur",
         date: "2023 – 2027",

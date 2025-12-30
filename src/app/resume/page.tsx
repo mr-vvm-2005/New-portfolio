@@ -68,7 +68,7 @@ export default function ResumePage() {
                     <div className="md:col-span-1 space-y-8">
                         <Section title="Education">
                             <div className="mb-4">
-                                <h3 className="font-bold">B.E. Information Technology</h3>
+                                <h3 className="font-bold">B.Tech - Information Technology</h3>
                                 <p className="text-gray-600 text-sm">Dr. Sivanthi Aditanar College of Engineering</p>
                                 <p className="text-gray-500 text-xs mt-1">2023 - 2027</p>
                             </div>
@@ -119,7 +119,7 @@ export default function ResumePage() {
                             <div className="mb-6">
                                 <div className="flex justify-between items-baseline mb-1">
                                     <h3 className="font-bold text-lg">Full Stack Developer Intern</h3>
-                                    <span className="text-xs font-mono text-gray-500">2023 - Present</span>
+                                    <span className="text-xs font-mono text-gray-500">2023 (1 Month)</span>
                                 </div>
                                 <div className="text-sm font-semibold text-accent-blue mb-2">IPCS Global, Tirunelveli</div>
                                 <ul className="list-disc ml-4 text-sm text-gray-700 space-y-2">
