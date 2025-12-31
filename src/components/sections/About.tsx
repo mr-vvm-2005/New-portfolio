@@ -1,9 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, MapPin, Calendar, Globe, Languages, Heart, Briefcase } from "lucide-react";
+import { User, MapPin, Calendar, Globe, Languages, Heart, Briefcase, Code, Database, Cpu, Server, Layers, Workflow, Terminal } from "lucide-react";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
+
+const techStack = [
+    { icon: <Code size={24} />, label: "Frontend", color: "text-blue-400" },
+    { icon: <Server size={24} />, label: "Backend", color: "text-green-400" },
+    { icon: <Database size={24} />, label: "Database", color: "text-yellow-400" },
+    { icon: <Globe size={24} />, label: "Web", color: "text-purple-400" },
+    { icon: <Cpu size={24} />, label: "System", color: "text-red-400" },
+    { icon: <Layers size={24} />, label: "UI/UX", color: "text-pink-400" },
+    { icon: <Workflow size={24} />, label: "DevOps", color: "text-orange-400" },
+    { icon: <Terminal size={24} />, label: "Scripting", color: "text-gray-400" },
+];
 
 export default function About() {
     const details = [
@@ -34,34 +45,84 @@ export default function About() {
                     </motion.div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center text-left w-full overflow-hidden">
-                        {/* Profile Image Column - Circle Style */}
+                        {/* Profile Image Column - Orbit Animation */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="lg:col-span-5 flex justify-center"
+                            className="lg:col-span-5 flex justify-center perspective-1000"
                         >
-                            <div className="relative group">
-                                {/* Animated Outer Glow */}
-                                <div className="absolute -inset-2 bg-gradient-to-tr from-accent-blue via-accent-violet to-accent-blue rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700 animate-spin-slow" />
-
-                                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl">
-                                    <Image
-                                        src={getAssetPath("/profile.jpg")}
-                                        alt="Mr.vvm"
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                        unoptimized
-                                    />
-                                    {/* Glass Overlay on Image */}
-                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-near-black/40" />
+                            <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex items-center justify-center">
+                                {/* Center Profile Image */}
+                                <div className="relative w-48 h-48 md:w-60 md:h-60 rounded-full z-20">
+                                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent-blue to-accent-violet animate-pulse blur-md opacity-50" />
+                                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 hover:border-accent-blue transition-colors duration-300 shadow-2xl shadow-accent-blue/20 group">
+                                        <Image
+                                            src={getAssetPath("/profile.jpg")}
+                                            alt="Mr.vvm"
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    </div>
                                 </div>
 
-                                {/* Orbiting Accent */}
-                                <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-white rounded-full flex items-center justify-center text-near-black shadow-xl transform group-hover:rotate-12 transition-transform">
-                                    <Heart size={20} className="text-accent-violet fill-accent-violet" />
-                                </div>
+                                {/* Orbit Rings */}
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="absolute inset-0 rounded-full border border-white/5"
+                                />
+
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="absolute inset-[15%] rounded-full border border-white/5 border-dashed"
+                                />
+
+                                {/* Rotating Tech Stack */}
+                                <motion.div
+                                    animate={{ rotate: 360 }}
+                                    transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+                                    className="absolute inset-0 w-full h-full"
+                                >
+                                    {techStack.map((tech, index) => {
+                                        const angle = (index / techStack.length) * 360;
+
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="absolute top-1/2 left-1/2 w-12 h-12 -ml-6 -mt-6"
+                                                style={{
+                                                    transform: `rotate(${angle}deg) translate(140px) rotate(-${angle}deg)`
+                                                }}
+                                            >
+                                                <motion.div
+                                                    animate={{ rotate: -360 }}
+                                                    transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+                                                    className="w-full h-full"
+                                                >
+                                                    <motion.div
+                                                        whileHover={{ scale: 1.2, y: -5 }}
+                                                        animate={{ y: [0, -8, 0] }}
+                                                        transition={{
+                                                            y: { repeat: Infinity, duration: 2 + (index % 3), ease: "easeInOut" },
+                                                            scale: { duration: 0.2 }
+                                                        }}
+                                                        className="w-12 h-12 glass rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 hover:border-accent-blue/50 transition-colors shadow-lg shadow-black/50"
+                                                        title={tech.label}
+                                                    >
+                                                        <div className={tech.color}>
+                                                            {tech.icon}
+                                                        </div>
+                                                    </motion.div>
+                                                </motion.div>
+                                            </div>
+                                        );
+                                    })}
+                                </motion.div>
                             </div>
                         </motion.div>
 

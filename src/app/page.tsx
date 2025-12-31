@@ -48,7 +48,7 @@ export default function Home() {
                         <a href="#" className="text-white/20 hover:text-white transition-colors text-xs uppercase tracking-widest">Terms of Service</a>
                     </div>
                     <div className="text-white/40 text-sm font-mono">
-                        Designed for <span className="text-accent-blue">Mr.vvm</span> | Next.js & GSAP
+                        Designed by <span className="text-accent-blue">Mr.vvm</span>
                     </div>
                 </div>
             </footer>

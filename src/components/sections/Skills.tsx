@@ -14,6 +14,10 @@ const skills = [
     { name: "Node.js", category: "Backend", level: 70, color: "#339933" },
     { name: "Git", category: "Tools", level: 85, color: "#F05032" },
     { name: "AI Prompting", category: "Trends", level: 90, color: "#8B5CF6" },
+    { name: "Editing (Photo/Video)", category: "Creative", level: 85, color: "#D946EF" },
+    { name: "Photography", category: "Creative", level: 80, color: "#F59E0B" },
+    { name: "Communication", category: "Soft Skills", level: 90, color: "#10B981" },
+    { name: "Social Media Marketing", category: "Marketing", level: 85, color: "#EC4899" },
 ];
 
 export default function Skills() {
