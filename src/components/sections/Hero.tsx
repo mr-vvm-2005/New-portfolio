@@ -15,14 +15,20 @@ export default function Hero() {
     useEffect(() => {
         if (!textRef.current) return;
 
+        const el = textRef.current;
+
         // GSAP Text Split Effect (Simulated)
-        const text = textRef.current.innerText;
-        textRef.current.innerHTML = text
+        // Ensure we only split if it hasn't been split yet or if we are mounting fresh
+        // If innerHTML already contains spans, we might duplicate. But simple useEffect [] runs once per mount.
+        const text = el.innerText;
+
+        // Wrap words
+        el.innerHTML = text
             .split(" ")
             .map((word) => `<span class="inline-block opacity-0 translate-y-full">${word}&nbsp;</span>`)
             .join("");
 
-        gsap.to(textRef.current.querySelectorAll("span"), {
+        gsap.to(el.querySelectorAll("span"), {
             opacity: 1,
             y: 0,
             duration: 1,
@@ -30,6 +36,38 @@ export default function Hero() {
             ease: "power4.out",
             delay: 0.5,
         });
+
+        // Long Press Logic
+        let longPressTimer: NodeJS.Timeout;
+
+        const handleStart = () => {
+            longPressTimer = setTimeout(() => {
+                window.open("https://www.linkedin.com/in/mrvvmoffical2005", "_blank");
+                if (typeof navigator !== "undefined" && navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
+            }, 800);
+        };
+
+        const handleEnd = () => {
+            if (longPressTimer) clearTimeout(longPressTimer);
+        };
+
+        // Add Listeners
+        el.addEventListener("touchstart", handleStart, { passive: true });
+        el.addEventListener("touchend", handleEnd);
+        el.addEventListener("mousedown", handleStart);
+        el.addEventListener("mouseup", handleEnd);
+        el.addEventListener("mouseleave", handleEnd);
+
+        return () => {
+            // Cleanup
+            el.removeEventListener("touchstart", handleStart);
+            el.removeEventListener("touchend", handleEnd);
+            el.removeEventListener("mousedown", handleStart);
+            el.removeEventListener("mouseup", handleEnd);
+            el.removeEventListener("mouseleave", handleEnd);
+        };
     }, []);
 
     return (
@@ -54,7 +92,7 @@ export default function Hero() {
 
                 <h1
                     ref={textRef}
-                    className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 tracking-tight leading-[1.1]"
+                    className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-[1.1] whitespace-nowrap select-none cursor-pointer transition-all duration-300 active:scale-95 active:text-accent-blue hover:scale-105 hover:text-accent-blue hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]"
                 >
                     Vetrivel Murugan P
                 </h1>
