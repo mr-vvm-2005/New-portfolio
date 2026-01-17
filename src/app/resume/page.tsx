@@ -17,37 +17,50 @@ export default function ResumePage() {
                 @media print {
                     @page {
                         size: A4 portrait;
-                        margin: 0.5cm;
+                        margin: 6mm 10mm 6mm 10mm; /* Narrow margins for max space */
                     }
                     body {
                         background: white;
-                        print-color-adjust: exact;
                         -webkit-print-color-adjust: exact;
+                        print-color-adjust: exact;
                     }
                     #resume-content {
-                        margin: 0;
-                        padding: 0 !important;
                         box-shadow: none !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
                         width: 100% !important;
                         max-width: 100% !important;
                     }
                     
-                    /* Force Single Page Fit */
-                    h1 { font-size: 22pt !important; margin-bottom: 4px !important; }
-                    h2 { font-size: 11pt !important; margin-top: 10px !important; margin-bottom: 6px !important; padding-bottom: 2px !important; }
-                    h3 { font-size: 10pt !important; }
-                    p, li, span, div { font-size: 9.5pt !important; line-height: 1.4 !important; }
+                    /* Typography Optimization for Single Page */
+                    h1 { font-size: 20pt !important; margin-bottom: 2mm !important; }
+                    .role-title { font-size: 11pt !important; margin-bottom: 3mm !important; }
+                    h2 { 
+                        font-size: 11pt !important; 
+                        margin-top: 3mm !important; 
+                        margin-bottom: 1.5mm !important; 
+                        border-bottom-width: 1px !important;
+                    }
+                    h3 { font-size: 10pt !important; margin-bottom: 0.5mm !important; }
+                    p, li, span, div { font-size: 9pt !important; line-height: 1.35 !important; }
                     
+                    /* Hide UI elements */
                     .print\\:hidden { display: none !important; }
                     
-                    /* Reduce gaps for print */
-                    .gap-4 { gap: 0.75rem !important; }
-                    .gap-6 { gap: 1rem !important; }
-                    .my-4 { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
-                    .mb-4 { margin-bottom: 0.5rem !important; }
+                    /* Layout tightening */
+                    .gap-y-2 { gap: 0.5mm !important; }
+                    .gap-4 { gap: 2mm !important; }
+                    .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.5mm !important; }
+                    .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 2mm !important; }
+                    .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 1mm !important; }
+                    .space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5mm !important; }
+                    .mb-4 { margin-bottom: 2mm !important; }
+                    .mb-3 { margin-bottom: 1.5mm !important; }
                     
-                    /* Hide scrollbars/overflow */
-                    html, body { overflow: visible !important; height: auto !important; }
+                    /* Prevent page breaks inside items */
+                    section, .break-inside-avoid {
+                        break-inside: avoid;
+                    }
                 }
             `}</style>
 
@@ -70,189 +83,171 @@ export default function ResumePage() {
                 </button>
             </div>
 
-            {/* A4 Page Container */}
+            {/* A4 Page Container (210mm x 297mm) */}
             <main
                 ref={resumeRef}
                 id="resume-content"
-                className="w-[21cm] min-h-[29.7cm] bg-white shadow-xl px-10 py-8 mx-auto text-gray-800"
+                className="w-[210mm] min-h-[297mm] bg-white shadow-xl px-12 py-10 mx-auto text-gray-800 flex flex-col"
             >
-                {/* Header - ATS Friendly: Clear Hierarchy */}
-                <header className="text-center border-b-2 border-gray-800 pb-4 mb-4">
-                    <h1 className="text-4xl font-extrabold uppercase tracking-tight text-gray-900 mb-1">
+                {/* Header */}
+                <header className="text-center border-b border-gray-300 pb-3 mb-3 break-inside-avoid">
+                    <h1 className="text-3xl font-extrabold uppercase tracking-tight text-gray-900 leading-none mb-1">
                         Vetrivel Murugan P
                     </h1>
-                    <p className="text-lg font-medium text-blue-700 tracking-wide uppercase mb-3">
+                    <p className="role-title text-base font-semibold text-blue-700 uppercase tracking-wide">
                         Full Stack Developer
                     </p>
 
-                    {/* Contact Info - Text based for ATS parsing */}
-                    <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1 text-sm text-gray-700 font-medium">
-                        <span className="flex items-center gap-1">
-                            <Mail size={14} className="text-gray-500" /> pkvetrivelvvm@gmail.com
-                        </span>
-                        <span className="hidden sm:inline text-gray-400">|</span>
-                        <span className="flex items-center gap-1">
-                            <Phone size={14} className="text-gray-500" /> +91 7598611585
-                        </span>
-                        <span className="hidden sm:inline text-gray-400">|</span>
-                        <span className="flex items-center gap-1">
-                            <Linkedin size={14} className="text-gray-500" /> linkedin.com/in/mrvvmoffical2005
-                        </span>
-                        <span className="hidden sm:inline text-gray-400">|</span>
-                        <span className="flex items-center gap-1">
-                            <Github size={14} className="text-gray-500" /> github.com/mr-vvm-2005
-                        </span>
-                        <span className="hidden sm:inline text-gray-400">|</span>
-                        <span className="flex items-center gap-1">
-                            <MapPin size={14} className="text-gray-500" /> Tenkasi, India
-                        </span>
+                    {/* Contact Info (Text-based for ATS) */}
+                    <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-xs text-gray-600 font-medium mt-2">
+                        <span>pkvetrivelvvm@gmail.com</span>
+                        <span className="text-gray-300">|</span>
+                        <span>+91 7598611585</span>
+                        <span className="text-gray-300">|</span>
+                        <span>linkedin.com/in/mrvvmoffical2005</span>
+                        <span className="text-gray-300">|</span>
+                        <span>github.com/mr-vvm-2005</span>
+                        <span className="text-gray-300">|</span>
+                        <span>Tenkasi, India</span>
                     </div>
                 </header>
 
-                {/* Professional Body - Single Column Hybrid */}
-                <div className="space-y-4">
+                {/* Content Body */}
+                <div className="flex-1 space-y-4">
 
                     {/* Summary */}
                     <section>
-                        <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
+                        <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-1.5">
                             Professional Summary
                         </h2>
-                        <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                            Aspiring Full Stack Developer with a strong foundation in modern web technologies and a passion for building user-centric applications. Currently mastering advanced full-stack development through the NxtWave CCBP 4.0 program. Detail-oriented and eager to leverage skills in React.js, Node.js, and Python to contribute to innovative software solutions.
+                        <p className="text-xs text-justify leading-relaxed text-gray-700">
+                            Aspiring Full Stack Developer with a strong foundation in modern web architecture. Currently refining advanced development skills through the NxtWave CCBP 4.0 program. Passionate about creating efficient, scalable, and user-friendly web solutions using React.js and Node.js. Dedicated to continuous learning and applying technical expertise to solve real-world problems.
                         </p>
                     </section>
 
-                    {/* Technical Skills - Categorized for ATS */}
+                    {/* Technical Skills - Table-like Grid for Compactness */}
                     <section>
-                        <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
+                        <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
                             Technical Skills
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8 text-sm">
-                            <div className="flex gap-2">
-                                <span className="font-bold text-gray-800 min-w-[80px]">Frontend:</span>
-                                <span className="text-gray-700">React.js, Next.js, Tailwind CSS, HTML5, CSS3, JavaScript, Bootstrap</span>
-                            </div>
-                            <div className="flex gap-2">
-                                <span className="font-bold text-gray-800 min-w-[80px]">Backend:</span>
-                                <span className="text-gray-700">Node.js, Express.js, Python, SQLite</span>
-                            </div>
-                            <div className="flex gap-2">
-                                <span className="font-bold text-gray-800 min-w-[80px]">Tools:</span>
-                                <span className="text-gray-700">Git, GitHub, VS Code, Figma, Vercel</span>
-                            </div>
-                            <div className="flex gap-2">
-                                <span className="font-bold text-gray-800 min-w-[80px]">Libraries:</span>
-                                <span className="text-gray-700">Framer Motion, GSAP, Three.js</span>
-                            </div>
+                        <div className="grid grid-cols-[80px_1fr] gap-y-1 text-xs gap-x-2">
+                            <span className="font-bold text-gray-800">Frontend:</span>
+                            <span className="text-gray-700">React.js, Next.js, Tailwind CSS, HTML5, CSS3, JavaScript (ES6+), Bootstrap</span>
+
+                            <span className="font-bold text-gray-800">Backend:</span>
+                            <span className="text-gray-700">Node.js, Express.js, Python, SQLite, RESTful APIs</span>
+
+                            <span className="font-bold text-gray-800">Tools:</span>
+                            <span className="text-gray-700">Git, GitHub, VS Code, Figma, Vercel, Postman</span>
+
+                            <span className="font-bold text-gray-800">Libraries:</span>
+                            <span className="text-gray-700">Framer Motion, Three.js, GSAP</span>
                         </div>
                     </section>
 
                     {/* Experience */}
                     <section>
-                        <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-3">
+                        <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
                             Experience
                         </h2>
-                        <div className="mb-2">
-                            <div className="flex justify-between items-baseline">
+                        <div className="mb-2 break-inside-avoid">
+                            <div className="flex justify-between items-baseline mb-0.5">
                                 <h3 className="text-sm font-bold text-gray-900">Full Stack Developer Intern</h3>
-                                <span className="text-sm font-medium text-gray-600">July 2025</span>
+                                <span className="text-xs font-semibold text-gray-600">July 2025</span>
                             </div>
-                            <div className="text-sm text-blue-700 font-semibold mb-1">IPCS Global, Tirunelveli</div>
-                            <ul className="list-disc ml-5 text-sm text-gray-700 space-y-1">
-                                <li>Developed and maintained responsive web applications using modern JavaScript frameworks, ensuring cross-browser compatibility.</li>
-                                <li>Collaborated with senior developers to implement UI/UX designs, resulting in a 20% improvement in user engagement metrics.</li>
-                                <li>Optimized database queries and backend logic, enhancing application performance and loading times.</li>
+                            <div className="text-xs text-blue-700 font-semibold mb-1">IPCS Global, Tirunelveli</div>
+                            <ul className="list-disc ml-4 text-xs text-gray-700 space-y-1 pl-1">
+                                <li>Developed dynamic web applications using JavaScript and modern frameworks, enhancing user interaction.</li>
+                                <li>Collaborated with the design team to implement responsive UI components, ensuring seamless cross-device compatibility.</li>
+                                <li>Worked on backend logic optimization and database management to improve application efficiency.</li>
                             </ul>
                         </div>
                     </section>
 
                     {/* Projects */}
                     <section>
-                        <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-3">
+                        <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
                             Key Projects
                         </h2>
                         <div className="space-y-3">
-                            <div>
+                            <div className="break-inside-avoid">
                                 <div className="flex justify-between items-baseline">
                                     <h3 className="text-sm font-bold text-gray-900">Dental Care Appointment System</h3>
-                                    <span className="text-xs font-mono text-gray-500 bg-gray-100 px-1 rounded">React, CSS, Vercel</span>
+                                    <span className="text-[10px] font-mono text-gray-500 border border-gray-200 px-1 rounded">React • CSS</span>
                                 </div>
-                                <p className="text-sm text-gray-700 mt-1">
-                                    Built a comprehensive platform for booking dental appointments featuring real-time availability checking and a responsive user interface.
+                                <p className="text-xs text-gray-700 mt-0.5 leading-snug">
+                                    A responsive platform for booking dental appointments. Features include real-time slot availability, doctor selection, and a streamlined booking process.
                                 </p>
                             </div>
-                            <div>
+                            <div className="break-inside-avoid">
                                 <div className="flex justify-between items-baseline">
-                                    <h3 className="text-sm font-bold text-gray-900">College ERP Portal (Clone)</h3>
-                                    <span className="text-xs font-mono text-gray-500 bg-gray-100 px-1 rounded">HTML, CSS, JS</span>
+                                    <h3 className="text-sm font-bold text-gray-900">College ERP System (Clone)</h3>
+                                    <span className="text-[10px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML • CSS • JS</span>
                                 </div>
-                                <p className="text-sm text-gray-700 mt-1">
-                                    Developed a functional clone of a college ERP system including modules for student data management, faculty portals, and attendance tracking.
+                                <p className="text-xs text-gray-700 mt-0.5 leading-snug">
+                                    A functional clone of an ERP portal. Implemented modules for student profile management, faculty dashboards, and attendance tracking.
                                 </p>
                             </div>
-                            <div>
+                            <div className="break-inside-avoid">
                                 <div className="flex justify-between items-baseline">
                                     <h3 className="text-sm font-bold text-gray-900">Interactive Resume Builder</h3>
-                                    <span className="text-xs font-mono text-gray-500 bg-gray-100 px-1 rounded">JavaScript, Canvas</span>
+                                    <span className="text-[10px] font-mono text-gray-500 border border-gray-200 px-1 rounded">JS • Canvas</span>
                                 </div>
-                                <p className="text-sm text-gray-700 mt-1">
-                                    Created a tool enabling users to generate professional resumes instantly with live preview and PDF export capabilities.
+                                <p className="text-xs text-gray-700 mt-0.5 leading-snug">
+                                    An online tool enabling users to input data and generate professional-grade resumes instantly with PDF export functionality.
                                 </p>
                             </div>
                         </div>
                     </section>
 
-                    {/* Education & Certs Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Education & Certifications (Columns) */}
+                    <div className="grid grid-cols-2 gap-6 pt-1">
                         <section>
-                            <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
+                            <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
                                 Education
                             </h2>
-                            <div className="space-y-2">
+                            <div className="space-y-3">
                                 <div>
-                                    <h3 className="text-sm font-bold text-gray-900">B.Tech - Information Technology</h3>
-                                    <p className="text-sm text-gray-700">Dr. Sivanthi Aditanar College of Engg.</p>
-                                    <div className="flex justify-between text-xs text-gray-600 mt-0.5">
-                                        <span>2023 - 2027</span>
-                                        <span className="font-semibold">CGPA: 7.7</span>
+                                    <div className="flex justify-between items-baseline">
+                                        <h3 className="text-xs font-bold text-gray-900">B.Tech - IT</h3>
+                                        <span className="text-[10px] text-gray-500">2023 - 2027</span>
                                     </div>
+                                    <p className="text-xs text-gray-700">Dr. Sivanthi Aditanar College</p>
+                                    <p className="text-[10px] text-gray-600 font-medium">CGPA: 7.7 (Current)</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-bold text-gray-900">HSC (Class XII)</h3>
-                                    <p className="text-sm text-gray-700">Shriram Vidhalaya HSS</p>
-                                    <div className="flex justify-between text-xs text-gray-600 mt-0.5">
-                                        <span>2023</span>
-                                        <span className="font-semibold">82.5%</span>
+                                    <div className="flex justify-between items-baseline">
+                                        <h3 className="text-xs font-bold text-gray-900">HSC (Class XII)</h3>
+                                        <span className="text-[10px] text-gray-500">2023</span>
                                     </div>
+                                    <p className="text-xs text-gray-700">Shriram Vidhalaya HSS</p>
+                                    <p className="text-[10px] text-gray-600 font-medium">Score: 82.5%</p>
                                 </div>
                             </div>
                         </section>
 
                         <section>
-                            <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
+                            <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 mb-2">
                                 Certifications
                             </h2>
-                            <ul className="text-sm text-gray-700 space-y-1">
-                                <li className="flex justify-between"><span>Python for Data Science</span> <span className="text-xs text-gray-500">NPTEL</span></li>
-                                <li className="flex justify-between"><span>Front End Technologies</span> <span className="text-xs text-gray-500">IBM</span></li>
-                                <li className="flex justify-between"><span>Software Engineering Sim</span> <span className="text-xs text-gray-500">JP Morgan</span></li>
-                                <li className="flex justify-between"><span>Elements of AI</span> <span className="text-xs text-gray-500">Univ. of Helsinki</span></li>
-                                <li className="flex justify-between"><span>Full-Stack Development</span> <span className="text-xs text-gray-500">Simplilearn</span></li>
+                            <ul className="text-xs text-gray-700 space-y-1">
+                                <li><span className="font-semibold text-gray-900">Python for Data Science</span> - NPTEL</li>
+                                <li><span className="font-semibold text-gray-900">Front End Technologies</span> - IBM</li>
+                                <li><span className="font-semibold text-gray-900">Elements of AI</span> - Univ. of Helsinki</li>
+                                <li><span className="font-semibold text-gray-900">Software Eng. Job Sim</span> - JP Morgan</li>
+                                <li><span className="font-semibold text-gray-900">Full-Stack Dev 101</span> - Simplilearn</li>
                             </ul>
                         </section>
                     </div>
 
-                    {/* Languages & Interests */}
-                    <section className="mt-4 pt-4 border-t border-gray-200">
-                        <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm">
-                            <div className="flex gap-2">
-                                <span className="font-bold text-gray-900">Languages:</span>
-                                <span className="text-gray-700">English (Professional), Tamil (Native)</span>
-                            </div>
-                            <div className="flex gap-2">
-                                <span className="font-bold text-gray-900">Interests:</span>
-                                <span className="text-gray-700">Web Development, UI/UX Design, Artificial Intelligence, AR/VR</span>
-                            </div>
+                    {/* Footer / Interests */}
+                    <section className="mt-auto pt-4 border-t border-gray-200">
+                        <div className="grid grid-cols-[80px_1fr] gap-x-2 text-xs">
+                            <span className="font-bold text-gray-800">Languages:</span>
+                            <span className="text-gray-700">English (Professional), Tamil (Native)</span>
+
+                            <span className="font-bold text-gray-800">Interests:</span>
+                            <span className="text-gray-700">Web Development, UI/UX Design, AI & Machine Learning</span>
                         </div>
                     </section>
 
