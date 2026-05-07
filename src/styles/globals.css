@@ -32,10 +32,29 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: #0D0D1A;
     color: var(--foreground);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+}
+
+/* Ensure all sections share the hero-dark background */
+section {
+    background-color: transparent;
+}
+
+/* Override utility bg classes to use unified dark */
+.bg-near-black {
+    background-color: #0D0D1A !important;
+}
+
+.bg-\[\#0c0c0c\]\/50 {
+    background-color: rgba(13, 13, 26, 0.6) !important;
+}
+
+/* Subtle section divider shimmer instead of hard color changes */
+.section-shimmer {
+    background: linear-gradient(180deg, rgba(108, 99, 255, 0.03) 0%, transparent 50%, rgba(0, 212, 255, 0.03) 100%);
 }
 
 h1,
