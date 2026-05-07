@@ -9,6 +9,7 @@ interface Project {
     title: string;
     description: string;
     link: string;
+    github: string;
     tags: string[];
     image: string;
 }
@@ -18,6 +19,7 @@ const projects: Project[] = [
         title: "Dental Care Appointment Booking",
         description: "A comprehensive platform for booking dental appointments with real-time availability and user-friendly interface.",
         link: "https://dental-care-appointment-booking.vercel.app/",
+        github: "https://github.com/mr-vvm-2005/Dental_care_appointment_booking.git",
         tags: ["React", "CSS", "Vercel"],
         image: getAssetPath("/previews/dental.png"),
     },
@@ -25,6 +27,7 @@ const projects: Project[] = [
         title: "College ERP Portal (Clone)",
         description: "A full-featured ERP system clone for college management including student and faculty modules.",
         link: "https://mr-vvm-2005.github.io/my-college-erp/",
+        github: "https://github.com/mr-vvm-2005/my-college-erp.git",
         tags: ["HTML", "CSS", "JavaScript"],
         image: getAssetPath("/previews/erp.png"),
     },
@@ -32,8 +35,17 @@ const projects: Project[] = [
         title: "Simple Resume Builder",
         description: "A clean and efficient tool for generating professional resumes in minutes with downloadable PDF feature.",
         link: "https://mr-vvm-2005.github.io/Simple-resume-builder-project/",
+        github: "https://github.com/mr-vvm-2005/Simple-resume-builder-project.git",
         tags: ["JavaScript", "HTML", "Canvas"],
         image: getAssetPath("/previews/resume.png"),
+    },
+    {
+        title: "CareerNavigator",
+        description: "A web-based career preparation platform helping students improve placement readiness with an ATS-optimized resume builder, skill gap analysis, personalized learning roadmaps, and curated resources.",
+        link: "https://mr-vvm-2005.github.io/Career-Navigator/",
+        github: "https://github.com/mr-vvm-2005/Career-Navigator",
+        tags: ["HTML", "CSS", "JavaScript", "AI"],
+        image: getAssetPath("/previews/career-navigator.png"), // Place CareerNavigator screenshot here
     },
 ];
 
@@ -46,7 +58,7 @@ export default function Projects() {
                     <p className="text-white/40 max-w-xl">A selection of my recent works where design meets functionality.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
                     {projects.map((project, index) => (
                         <ProjectCard key={project.title} project={project} index={index} />
                     ))}
@@ -63,17 +75,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     const mouseXSpring = useSpring(x);
     const mouseYSpring = useSpring(y);
 
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         const rect = e.currentTarget.getBoundingClientRect();
-        const width = rect.width;
-        const height = rect.height;
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-        const xPct = mouseX / width - 0.5;
-        const yPct = mouseY / height - 0.5;
+        const xPct = (e.clientX - rect.left) / rect.width - 0.5;
+        const yPct = (e.clientY - rect.top) / rect.height - 0.5;
         x.set(xPct);
         y.set(yPct);
     };
@@ -92,16 +100,16 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            className="relative min-h-[450px] w-full max-w-[400px] md:max-w-none glass rounded-3xl border border-white/5 overflow-hidden group"
+            className="relative w-full max-w-[560px] glass rounded-3xl border border-white/5 overflow-hidden group"
         >
-            {/* Project Image */}
-            <div className="h-2/3 bg-near-black flex items-center justify-center overflow-hidden border-b border-white/5 relative">
+            {/* Project Image with hover zoom */}
+            <div className="h-56 bg-near-black flex items-center justify-center overflow-hidden border-b border-white/5 relative">
                 <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     unoptimized
-                    className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                    className="object-cover transition-transform duration-500 ease-in-out opacity-60 group-hover:opacity-100 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent z-10" />
             </div>
@@ -117,18 +125,27 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <h3 className="text-xl font-bold mb-2 group-hover:text-accent-blue transition-colors">
                     {project.title}
                 </h3>
-                <p className="text-sm text-white/50 line-clamp-2 mb-4">
+                <p className="text-sm text-white/50 line-clamp-3 mb-6">
                     {project.description}
                 </p>
 
-                <div className="absolute bottom-6 right-6">
+                {/* Action buttons */}
+                <div className="flex items-center gap-3">
                     <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white hover:bg-accent-blue hover:text-white hover:border-accent-blue shadow-lg transition-all"
+                        className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent-blue text-white text-xs font-bold uppercase tracking-widest hover:bg-accent-blue/80 transition-all"
                     >
-                        <ExternalLink size={20} />
+                        <ExternalLink size={14} /> Live Demo
+                    </a>
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 text-white/60 text-xs font-bold uppercase tracking-widest hover:border-white/30 hover:text-white transition-all"
+                    >
+                        <Github size={14} /> GitHub
                     </a>
                 </div>
             </div>

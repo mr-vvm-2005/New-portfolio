@@ -12,9 +12,23 @@ interface TimelineItem {
     date: string;
     details?: string;
     icon: React.ReactNode;
+    badge?: string;
+    completed?: boolean;
 }
 
 const timelineData: TimelineItem[] = [
+    {
+        id: "exp-2",
+        type: "Experience",
+        title: "IBM Cognos Analytics Virtual Intern",
+        subtitle: "Adroit Technologies Innovative Solutions Pvt Ltd",
+        location: "Remote",
+        date: "Dec 2025 – Feb 2026",
+        details: "Completed a virtual internship focused on IBM Cognos Analytics. Built dashboards, created analytical reports, and explored real-world business datasets. Awarded a verified completion certificate.",
+        icon: <Briefcase size={18} />,
+        badge: "Internship Certificate",
+        completed: true,
+    },
     {
         id: "exp-1",
         type: "Experience",
@@ -22,8 +36,10 @@ const timelineData: TimelineItem[] = [
         subtitle: "IPCS Global",
         location: "Tirunelveli",
         date: "01.07.2025 - 30.07.2025",
-        details: "Working on real-world projects, gaining hands-on experience in both frontend and backend development.",
-        icon: <Briefcase size={18} />
+        details: "Successfully completed a 1-month Full Stack Development internship. Built and analyzed data dashboards using IBM Cognos Analytics, created reports, and worked with real-world datasets.",
+        icon: <Briefcase size={18} />,
+        badge: "Internship Certificate",
+        completed: true,
     },
     {
         id: "aca-1",
@@ -33,7 +49,7 @@ const timelineData: TimelineItem[] = [
         location: "Online",
         date: "2023 – 2026",
         details: "Specializing in 4.0 Technologies with a focus on Full Stack Web Development (MERN Stack).",
-        icon: <Award size={18} />
+        icon: <Award size={18} />,
     },
     {
         id: "edu-1",
@@ -42,7 +58,7 @@ const timelineData: TimelineItem[] = [
         subtitle: "Dr. Sivanthi Aditanar College of Engineering",
         location: "Tiruchendur",
         date: "2023 – 2027",
-        icon: <GraduationCap size={18} />
+        icon: <GraduationCap size={18} />,
     },
     {
         id: "edu-2",
@@ -51,7 +67,7 @@ const timelineData: TimelineItem[] = [
         subtitle: "Shriram Vidhalaya Higher Secondary School",
         location: "Tenkasi",
         date: "Completion: 2023",
-        icon: <GraduationCap size={18} />
+        icon: <GraduationCap size={18} />,
     },
 ];
 
@@ -78,19 +94,25 @@ export default function TimelineSection() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className={`relative flex items-center w-full ${index % 2 === 0 ? "md:flex-row-reverse" : ""
-                                    }`}
+                                className={`relative flex items-center w-full ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                             >
                                 {/* Content Area */}
-                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right pl-20 md:pl-0" : "md:pl-12 md:text-left pl-20 md:pl-0"
-                                    }`}>
+                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right pl-20 md:pl-0" : "md:pl-12 md:text-left pl-20 md:pl-0"}`}>
                                     <div className="glass p-6 md:p-8 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group relative overflow-hidden">
                                         {/* Hover Gradient Background */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-accent-violet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                                        <span className="inline-block px-3 py-1 rounded-full bg-accent-violet/10 text-accent-violet text-[10px] font-bold tracking-widest uppercase mb-4">
-                                            {item.type} | {item.date}
-                                        </span>
+                                        <div className={`flex flex-wrap gap-2 mb-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                                            <span className="inline-block px-3 py-1 rounded-full bg-accent-violet/10 text-accent-violet text-[10px] font-bold tracking-widest uppercase">
+                                                {item.type} | {item.date}
+                                            </span>
+                                            {item.completed && (
+                                                <span className="inline-block px-3 py-1 rounded-full bg-green-500/15 text-green-400 text-[10px] font-bold tracking-widest uppercase border border-green-500/20">
+                                                    ✓ Completed
+                                                </span>
+                                            )}
+                                        </div>
+
                                         <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-accent-violet transition-colors">
                                             {item.title}
                                         </h3>
@@ -100,7 +122,12 @@ export default function TimelineSection() {
                                         </div>
                                         <div className="text-sm text-white/40 mb-4">{item.location}</div>
                                         {item.details && (
-                                            <p className="text-sm text-white/50 leading-relaxed font-light">{item.details}</p>
+                                            <p className="text-sm text-white/50 leading-relaxed font-light mb-4">{item.details}</p>
+                                        )}
+                                        {item.badge && (
+                                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-[10px] font-bold tracking-widest uppercase border border-accent-blue/20">
+                                                🏅 {item.badge}
+                                            </span>
                                         )}
                                     </div>
                                 </div>

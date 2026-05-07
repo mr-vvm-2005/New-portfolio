@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import ParticleBackground from "./ParticleBackground";
-import { MousePointer2, Download, Github, Linkedin, Instagram, Facebook, Twitter, Printer } from "lucide-react";
+import { Download, Github, Linkedin, Instagram, Twitter, Printer } from "lucide-react";
 import Link from "next/link";
 import { getAssetPath } from "@/lib/utils";
 
@@ -17,12 +17,8 @@ export default function Hero() {
 
         const el = textRef.current;
 
-        // GSAP Text Split Effect (Simulated)
-        // Ensure we only split if it hasn't been split yet or if we are mounting fresh
-        // If innerHTML already contains spans, we might duplicate. But simple useEffect [] runs once per mount.
         const text = el.innerText;
 
-        // Wrap words
         el.innerHTML = text
             .split(" ")
             .map((word) => `<span class="inline-block opacity-0 translate-y-full">${word}&nbsp;</span>`)
@@ -37,7 +33,6 @@ export default function Hero() {
             delay: 0.5,
         });
 
-        // Long Press Logic
         let longPressTimer: NodeJS.Timeout;
 
         const handleStart = () => {
@@ -53,7 +48,6 @@ export default function Hero() {
             if (longPressTimer) clearTimeout(longPressTimer);
         };
 
-        // Add Listeners
         el.addEventListener("touchstart", handleStart, { passive: true });
         el.addEventListener("touchend", handleEnd);
         el.addEventListener("mousedown", handleStart);
@@ -61,7 +55,6 @@ export default function Hero() {
         el.addEventListener("mouseleave", handleEnd);
 
         return () => {
-            // Cleanup
             el.removeEventListener("touchstart", handleStart);
             el.removeEventListener("touchend", handleEnd);
             el.removeEventListener("mousedown", handleStart);
@@ -103,7 +96,7 @@ export default function Hero() {
                     transition={{ duration: 1, delay: 1.2 }}
                     className="text-lg md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto min-h-[3rem] md:min-h-auto"
                 >
-                    <Typewriter texts={["Aspiring Full Stack Developer", "Creative UI/UX Enthusiast", "Problem Solver"]} />
+                    <Typewriter texts={["Full Stack Developer", "React Developer", "Python Enthusiast", "UI/UX Thinker"]} />
                 </motion.div>
 
                 <motion.div
@@ -179,7 +172,7 @@ function Typewriter({ texts }: { texts: string[] }) {
     return (
         <span className="inline-block">
             {displayText}
-            <span className="animate-pulse ml-0.5">|</span>
+            <span className="animate-pulse ml-0.5 text-accent-blue font-thin">|</span>
         </span>
     );
 }

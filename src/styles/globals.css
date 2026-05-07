@@ -3,21 +3,32 @@
 @import "tailwindcss";
 
 @theme {
-    --color-background: #0a0a0a;
-    --color-foreground: #ededed;
-    --color-accent-blue: #3b82f6;
+    --color-background: #0D0D1A;
+    --color-foreground: #E8E8FF;
+    --color-accent-blue: #6C63FF;
     --color-accent-violet: #8b5cf6;
-    --color-near-black: #0a0a0a;
+    --color-accent-cyan: #00D4FF;
+    --color-near-black: #0D0D1A;
+    --color-card-bg: #13132A;
     --font-sans: "Inter", sans-serif;
     --font-heading: "Poppins", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
 }
 
 :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --accent-blue: #3b82f6;
+    --background: #0D0D1A;
+    --foreground: #E8E8FF;
+    --accent-blue: #6C63FF;
     --accent-violet: #8b5cf6;
+    --accent-cyan: #00D4FF;
+    --text-muted: #8888AA;
+
+    /* Legacy aliases kept for backward compat */
+    --bg-primary: #0D0D1A;
+    --bg-card: #13132A;
+    --accent-primary: #6C63FF;
+    --accent-secondary: #00D4FF;
+    --text-primary: #E8E8FF;
 }
 
 body {
@@ -41,7 +52,9 @@ pre {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Noise Grain Overlay */
+/* =========================================
+   Noise Grain Overlay
+   ========================================= */
 .noise-overlay {
     position: fixed;
     top: 0;
@@ -50,42 +63,58 @@ pre {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.05;
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Custom Scrollbar */
+/* =========================================
+   Custom Scrollbar
+   ========================================= */
 ::-webkit-scrollbar {
     width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: #0D0D1A;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #2a2a4a;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: #6C63FF;
 }
 
-/* Glassmorphism */
+/* =========================================
+   Glassmorphism
+   ========================================= */
 .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
 }
 
 .glass-hover:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(3b, 82, f6, 0.2);
+    background: rgba(108, 99, 255, 0.08);
+    border-color: rgba(108, 99, 255, 0.25);
 }
 
-/* Lenis Smooth Scroll */
+/* Enhanced card glassmorphism used on cert/project/skill/timeline cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+}
+
+/* =========================================
+   Lenis Smooth Scroll
+   ========================================= */
 html.lenis {
     height: auto;
 }
@@ -104,4 +133,18 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
+}
+
+/* =========================================
+   Scroll-triggered Fade-In (Section reveal)
+   ========================================= */
+.section-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

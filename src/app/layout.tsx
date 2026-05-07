@@ -13,8 +13,19 @@ const poppins = Poppins({
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-    title: "Vetrivel Murugan P | Aspiring Full Stack Developer",
-    description: "Senior Creative Portfolio of Vetrivel Murugan P - Aspiring Full Stack Developer specialized in React, Next.js, and Cinematic Web Experiences.",
+    title: "Vetrivel Murugan P | Full Stack Developer Portfolio",
+    description: "Vetrivel Murugan P - Aspiring Full Stack Developer from Tamil Nadu. Explore my projects, certifications, and internship experience.",
+    openGraph: {
+        title: "Vetrivel Murugan P | Full Stack Developer Portfolio",
+        description: "Projects, Skills, Certifications & More",
+        url: "https://mr-vvm-2005.github.io/New-portfolio/",
+        type: "website",
+        images: [
+            {
+                url: "https://mr-vvm-2005.github.io/New-portfolio/profile.jpg",
+            },
+        ],
+    },
 };
 
 export default function RootLayout({
@@ -24,6 +35,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={`${inter.variable} ${poppins.variable} ${jetbrains.variable}`}>
+            <head>
+                <meta name="description" content="Vetrivel Murugan P - Aspiring Full Stack Developer from Tamil Nadu. Explore my projects, certifications, and internship experience." />
+                <meta property="og:title" content="Vetrivel Murugan P | Full Stack Developer Portfolio" />
+                <meta property="og:description" content="Projects, Skills, Certifications & More" />
+                <meta property="og:image" content="https://mr-vvm-2005.github.io/New-portfolio/profile.jpg" />
+                <meta property="og:url" content="https://mr-vvm-2005.github.io/New-portfolio/" />
+                <meta property="og:type" content="website" />
+            </head>
             <body className="bg-near-black text-foreground antialiased selection:bg-accent-violet/30">
                 <LenisProvider>
                     <div className="noise-overlay" />
