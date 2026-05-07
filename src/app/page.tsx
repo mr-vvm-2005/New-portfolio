@@ -14,16 +14,17 @@ export default function Home() {
             <ScrollProgressBar />
 
             {/* Navigation */}
-            <nav className="fixed top-3 left-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
-                <div className="text-xl font-bold tracking-tighter text-white pointer-events-auto cursor-pointer group">
-                    Mr.vvm<span className="text-accent-blue group-hover:text-accent-violet transition-colors">.</span>
+            <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center pointer-events-none">
+                <div className="text-xl font-bold tracking-tighter text-white pointer-events-auto cursor-pointer group flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-accent-blue flex items-center justify-center text-white text-sm font-black">V</div>
+                    <span className="hidden sm:inline">Vetrivel<span className="text-accent-blue group-hover:text-accent-violet transition-colors">.</span></span>
                 </div>
-                <div className="hidden md:flex gap-8 pointer-events-auto">
-                    {["About", "Projects", "Certifications", "Contact"].map((item) => (
+                <div className="flex gap-4 md:gap-8 pointer-events-auto glass px-6 py-3 rounded-full border border-white/10 shadow-xl backdrop-blur-md">
+                    {["About", "Projects", "Certifications"].map((item) => (
                         <a
                             key={item}
                             href={`#${item.toLowerCase()}`}
-                            className="text-xs uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors"
+                            className="text-[10px] uppercase tracking-[0.2em] text-white/50 hover:text-accent-blue transition-colors font-bold"
                         >
                             {item}
                         </a>

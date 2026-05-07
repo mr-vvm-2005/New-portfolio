@@ -28,6 +28,8 @@ export const metadata: Metadata = {
     },
 };
 
+import ParticleBackground from "@/components/sections/ParticleBackground";
+
 export default function RootLayout({
     children,
 }: {
@@ -43,9 +45,10 @@ export default function RootLayout({
                 <meta property="og:url" content="https://mr-vvm-2005.github.io/New-portfolio/" />
                 <meta property="og:type" content="website" />
             </head>
-            <body className="bg-near-black text-foreground antialiased selection:bg-accent-violet/30">
+            <body className="bg-near-black text-foreground antialiased selection:bg-accent-violet/30 overflow-x-hidden">
                 <LenisProvider>
                     <div className="noise-overlay" />
+                    <ParticleBackground />
                     <CustomCursor />
                     {children}
                 </LenisProvider>

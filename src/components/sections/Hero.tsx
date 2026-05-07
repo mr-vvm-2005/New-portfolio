@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import ParticleBackground from "./ParticleBackground";
+
 import { Download, Github, Linkedin, Instagram, Twitter, Printer } from "lucide-react";
 import Link from "next/link";
 import { getAssetPath } from "@/lib/utils";
@@ -68,7 +68,7 @@ export default function Hero() {
             ref={containerRef}
             className="relative h-screen flex flex-col items-center justify-center overflow-hidden px-6"
         >
-            <ParticleBackground />
+
 
             <div className="z-10 text-center">
                 <motion.div
@@ -85,7 +85,7 @@ export default function Hero() {
 
                 <h1
                     ref={textRef}
-                    className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-[1.1] whitespace-nowrap select-none cursor-pointer transition-all duration-300 active:scale-95 active:text-accent-blue hover:scale-105 hover:text-accent-blue hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-[1.1] select-none cursor-pointer transition-all duration-300 active:scale-95 active:text-accent-blue hover:scale-[1.02] md:hover:scale-105 hover:text-accent-blue hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.3)] break-words"
                 >
                     Vetrivel Murugan P
                 </h1>
@@ -94,7 +94,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.2 }}
-                    className="text-lg md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto min-h-[3rem] md:min-h-auto"
+                    className="text-lg md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto min-h-[4rem] flex items-center justify-center"
                 >
                     <Typewriter texts={["Full Stack Developer", "React Developer", "Python Enthusiast", "UI/UX Thinker"]} />
                 </motion.div>
@@ -103,22 +103,22 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.5 }}
-                    className="flex flex-wrap items-center justify-center gap-6"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-10"
                 >
                     <Link
                         href="/resume"
-                        className="group relative px-8 py-3 rounded-full bg-white text-[#000] font-bold overflow-hidden transition-all hover:pr-12 hover:bg-accent-blue hover:text-white border border-white"
+                        className="group relative px-8 py-3.5 rounded-full bg-white text-[#000] font-bold overflow-hidden transition-all hover:pr-14 hover:bg-accent-blue hover:text-white border border-white active:scale-95 shadow-lg shadow-white/5"
                     >
-                        <span className="relative z-10 flex items-center gap-2">
+                        <span className="relative z-10 flex items-center gap-2 text-sm uppercase tracking-widest">
                             <Printer size={18} />
-                            View / Print Resume
+                            Resume
                         </span>
-                        <span className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all">
+                        <span className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all">
                             &rarr;
                         </span>
                     </Link>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-5">
                         <SocialIcon href="https://github.com/mr-vvm-2005" icon={<Github size={20} />} />
                         <SocialIcon href="https://www.linkedin.com/in/mrvvmoffical2005" icon={<Linkedin size={20} />} />
                         <SocialIcon href="https://x.com/vetrivelvvm" icon={<Twitter size={20} />} />

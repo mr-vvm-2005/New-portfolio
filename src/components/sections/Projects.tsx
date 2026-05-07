@@ -58,7 +58,7 @@ export default function Projects() {
                     <h2 className="text-4xl font-bold mb-4">Featured <span className="text-accent-violet">Projects</span></h2>
                     <p className="text-white/40 max-w-xl">A selection of my recent works where design meets functionality.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 justify-items-center">
                     {projects.map((project, index) => (
                         <ProjectCard key={project.title} project={project} index={index} />
                     ))}

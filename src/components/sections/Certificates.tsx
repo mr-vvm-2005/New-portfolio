@@ -210,15 +210,15 @@ export default function Certificates() {
                 </div>
 
                 {/* Category Filter Tabs */}
-                <div className="flex flex-wrap gap-2 mb-10">
+                <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
                     {categories.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border transition-all duration-300 ${
+                            className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest border transition-all duration-300 ${
                                 activeCategory === cat
-                                    ? "bg-accent-blue text-white border-accent-blue shadow-[0_0_15px_rgba(59,130,246,0.4)]"
-                                    : "bg-white/5 text-white/50 border-white/10 hover:border-accent-blue/40 hover:text-white"
+                                    ? "bg-accent-blue text-white border-accent-blue shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                                    : "bg-white/5 text-white/40 border-white/10 hover:border-accent-blue/30 hover:text-white"
                             }`}
                         >
                             {cat}

@@ -47,9 +47,9 @@ function Particles({ count = 1500 }) {
 
 export default function ParticleBackground() {
     return (
-        <div className="absolute inset-0 -z-10 bg-near-black">
+        <div className="fixed inset-0 -z-20 pointer-events-none">
             <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-                <color attach="background" args={["#0a0a0a"]} />
+                <color attach="background" args={["#0d0d1a"]} />
                 <Particles />
             </Canvas>
         </div>

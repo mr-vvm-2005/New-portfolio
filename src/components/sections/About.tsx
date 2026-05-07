@@ -65,14 +65,14 @@ export default function About() {
                         viewport={{ once: true }}
                         className="lg:col-span-5 flex justify-center"
                     >
-                        <div className="relative w-[320px] h-[320px] md:w-[380px] md:h-[380px] flex items-center justify-center">
+                        <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[380px] md:h-[380px] flex items-center justify-center">
                             {/* Outer ring */}
                             <div className="absolute inset-0 rounded-full border border-white/5" />
                             {/* Inner dashed ring */}
                             <div className="absolute inset-[14%] rounded-full border border-white/5 border-dashed" />
 
                             {/* Profile image */}
-                            <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full z-20">
+                            <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full z-20">
                                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#6C63FF] to-[#00D4FF] animate-pulse blur-lg opacity-40" />
                                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 hover:border-accent-blue transition-colors duration-300 shadow-2xl shadow-[#6C63FF]/20 group">
                                     <Image
@@ -95,14 +95,16 @@ export default function About() {
                                     return (
                                         <div
                                             key={index}
-                                            className="absolute top-1/2 left-1/2 w-10 h-10 -ml-5 -mt-5"
-                                            style={{ transform: `rotate(${angle}deg) translate(155px) rotate(-${angle}deg)` }}
+                                            className="absolute top-1/2 left-1/2 w-8 h-8 sm:w-10 sm:h-10 -ml-4 sm:-ml-5 -mt-4 sm:-mt-5"
+                                            style={{ 
+                                                transform: `rotate(${angle}deg) translate(clamp(120px, 40vw, 155px)) rotate(-${angle}deg)` 
+                                            }}
                                         >
                                             <motion.div
                                                 animate={{ rotate: -360 }}
                                                 transition={{ repeat: Infinity, ease: "linear", duration: 28 }}
                                                 whileHover={{ scale: 1.3 }}
-                                                className="w-10 h-10 glass rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors shadow-md"
+                                                className="w-full h-full glass rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors shadow-md"
                                                 title={tech.label}
                                             >
                                                 <div className={tech.color}>{tech.icon}</div>
@@ -154,12 +156,12 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.25 }}
                             viewport={{ once: true }}
-                            className="grid grid-cols-4 gap-3"
+                            className="grid grid-cols-2 sm:grid-cols-4 gap-4"
                         >
                             {stats.map((s) => (
-                                <div key={s.label} className="glass p-4 rounded-2xl text-center border border-white/5 hover:border-[#6C63FF]/30 transition-all group">
-                                    <div className="text-2xl font-black text-[#6C63FF] group-hover:text-[#00D4FF] transition-colors">{s.value}</div>
-                                    <div className="text-[10px] uppercase tracking-widest text-white/35 mt-1">{s.label}</div>
+                                <div key={s.label} className="glass p-5 rounded-3xl text-center border border-white/5 hover:border-[#6C63FF]/30 transition-all group">
+                                    <div className="text-3xl font-black text-[#6C63FF] group-hover:text-[#00D4FF] transition-colors">{s.value}</div>
+                                    <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mt-2 font-bold">{s.label}</div>
                                 </div>
                             ))}
                         </motion.div>
