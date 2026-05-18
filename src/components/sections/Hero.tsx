@@ -85,7 +85,7 @@ export default function Hero() {
 
                 <h1
                     ref={textRef}
-                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-[1.1] select-none cursor-pointer transition-all duration-300 active:scale-95 active:text-accent-blue hover:scale-[1.02] md:hover:scale-105 hover:text-accent-blue hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.3)] break-words"
+                    className="text-[26px] min-[375px]:text-[32px] sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-[1.1] select-none cursor-pointer transition-all duration-300 active:scale-95 active:text-accent-blue hover:scale-[1.02] md:hover:scale-105 hover:text-accent-blue hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.3)] whitespace-nowrap"
                 >
                     Vetrivel Murugan P
                 </h1>
