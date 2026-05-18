@@ -11,18 +11,18 @@ export default function ResumePage() {
         <div className="min-h-screen bg-gray-100 text-black p-4 md:p-8 print:p-0 flex justify-center">
             <style jsx global>{`
                 @media print {
-                    @page { size: A4 portrait; margin: 8mm 10mm 8mm 10mm; }
+                    @page { size: A4 portrait; margin: 4mm 10mm 4mm 10mm; }
                     body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
                     #resume-content { box-shadow: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
                     .print-hide { display: none !important; }
-                    h1 { font-size: 18pt !important; margin-bottom: 1.5mm !important; }
-                    .role-title { font-size: 10pt !important; margin-bottom: 2mm !important; }
-                    h2 { font-size: 9.5pt !important; margin-top: 3mm !important; margin-bottom: 1.5mm !important; border-bottom-width: 1px !important; padding-bottom: 1mm !important; }
+                    h1 { font-size: 18pt !important; margin-bottom: 1mm !important; }
+                    .role-title { font-size: 10pt !important; margin-bottom: 1.5mm !important; }
+                    h2 { font-size: 9.5pt !important; margin-top: 2mm !important; margin-bottom: 1mm !important; border-bottom-width: 1px !important; padding-bottom: 0.5mm !important; }
                     h3 { font-size: 9pt !important; margin-bottom: 0.5mm !important; }
-                    p, li, span, div { font-size: 8.5pt !important; line-height: 1.35 !important; }
-                    section { margin-bottom: 2.5mm !important; break-inside: avoid; }
+                    p, li, span, div { font-size: 8.5pt !important; line-height: 1.25 !important; }
+                    section { margin-bottom: 1.5mm !important; break-inside: avoid; }
                     .break-inside-avoid { break-inside: avoid; }
-                    ul { margin-top: 1mm !important; padding-left: 4mm !important; }
+                    ul { margin-top: 0.5mm !important; padding-left: 4mm !important; }
                     li { margin-bottom: 0.5mm !important; }
                 }
             `}</style>
@@ -52,7 +52,7 @@ export default function ResumePage() {
             >
                 {/* ── HEADER ── */}
                 <header className="text-center border-b-2 border-blue-700 pb-3 mb-3 break-inside-avoid">
-                    <h1 className="text-[28px] font-extrabold uppercase tracking-tight text-gray-900 leading-none mb-1">
+                    <h1 className="text-[20px] sm:text-[28px] whitespace-nowrap font-extrabold uppercase tracking-tight text-gray-900 leading-none mb-1">
                         Vetrivel Murugan P
                     </h1>
                     <p className="role-title text-[13px] font-bold text-blue-700 uppercase tracking-widest mb-2">
