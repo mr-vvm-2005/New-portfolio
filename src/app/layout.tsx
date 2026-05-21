@@ -38,6 +38,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${inter.variable} ${poppins.variable} ${jetbrains.variable}`}>
             <head>
+                <meta name="google-site-verification" content="TtiPYJxbGH25dlDgDVrU5oOYn_RVsVWmYZPHHdew_ak" />
                 <meta name="description" content="Vetrivel Murugan P - Aspiring Full Stack Developer from Tamil Nadu. Explore my projects, certifications, and internship experience." />
                 <meta property="og:title" content="Vetrivel Murugan P | Full Stack Developer Portfolio" />
                 <meta property="og:description" content="Projects, Skills, Certifications & More" />

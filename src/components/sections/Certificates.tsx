@@ -175,8 +175,8 @@ const certificates = [
         issuer: "Adroit Technologies Innovative Solutions Pvt Ltd",
         date: "Dec 2025 – Feb 2026",
         category: "Internship" as Category,
-        link: getAssetPath("/certs/IBM INTERN completed certificate.jpeg"),
-        localImage: getAssetPath("/certs/IBM INTERN completed certificate.jpeg"),
+        link: getAssetPath("/certs/IBM INTERN completed certificate.png"),
+        localImage: getAssetPath("/certs/IBM INTERN completed certificate.png"),
         highlight: true,
     },
     {
