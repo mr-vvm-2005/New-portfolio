@@ -117,7 +117,7 @@ export default function ResumePage() {
                             <div className="break-inside-avoid">
                                 <div className="flex justify-between items-baseline">
                                     <h3 className="text-[11px] font-bold text-gray-900">IBM Cognos Analytics Virtual Intern</h3>
-                                    <span className="text-[9px] font-semibold text-gray-500">Dec 2025 – Feb 2026</span>
+                                    <span className="text-[9px] font-semibold text-gray-500">Mar 2026 – Apr 2026</span>
                                 </div>
                                 <div className="text-[9px] text-blue-700 font-semibold mb-1">Adroit Technologies Innovative Solutions Pvt Ltd · Remote</div>
                                 <ul className="list-disc ml-4 text-[9px] text-gray-700 space-y-0.5 pl-1">

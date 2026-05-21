@@ -173,7 +173,7 @@ const certificates = [
     {
         title: "IBM Cognos Analytics Virtual Internship",
         issuer: "Adroit Technologies Innovative Solutions Pvt Ltd",
-        date: "Dec 2025 – Feb 2026",
+        date: "Mar 2026 – Apr 2026",
         category: "Internship" as Category,
         link: getAssetPath("/certs/IBM INTERN completed certificate.png"),
         localImage: getAssetPath("/certs/IBM INTERN completed certificate.png"),

@@ -23,7 +23,7 @@ const timelineData: TimelineItem[] = [
         title: "IBM Cognos Analytics Virtual Intern",
         subtitle: "Adroit Technologies Innovative Solutions Pvt Ltd",
         location: "Remote",
-        date: "Dec 2025 – Feb 2026",
+        date: "Mar 2026 – Apr 2026",
         details: "Completed a virtual internship focused on IBM Cognos Analytics. Built dashboards, created analytical reports, and explored real-world business datasets. Awarded a verified completion certificate.",
         icon: <Briefcase size={18} />,
         badge: "Internship Certificate",
