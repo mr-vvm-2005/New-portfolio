@@ -13,11 +13,12 @@ const poppins = Poppins({
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-    title: "Vetrivel Murugan P | Full Stack Developer Portfolio",
-    description: "Vetrivel Murugan P - Aspiring Full Stack Developer from Tamil Nadu. Explore my projects, certifications, and internship experience.",
+    title: "Mr.VVM | Vetrivel Murugan P - Full Stack Developer Portfolio",
+    description: "Mr.VVM (VVM) - Vetrivel Murugan P Full Stack Developer Portfolio. Explore projects, certifications, internships, skills, achievements, and developer journey.",
+    authors: [{ name: "Vetrivel Murugan P" }],
     openGraph: {
-        title: "Vetrivel Murugan P | Full Stack Developer Portfolio",
-        description: "Projects, Skills, Certifications & More",
+        title: "Mr.VVM | Full Stack Developer Portfolio",
+        description: "Portfolio of Vetrivel Murugan P",
         url: "https://mr-vvm-2005.github.io/New-portfolio/",
         type: "website",
         images: [
@@ -39,14 +40,15 @@ export default function RootLayout({
         <html lang="en" className={`${inter.variable} ${poppins.variable} ${jetbrains.variable}`}>
             <head>
                 <meta name="google-site-verification" content="TtiPYJxbGH25dlDgDVrU5oOYn_RVsVWmYZPHHdew_ak" />
-                <meta name="description" content="Vetrivel Murugan P - Aspiring Full Stack Developer from Tamil Nadu. Explore my projects, certifications, and internship experience." />
-                <meta property="og:title" content="Vetrivel Murugan P | Full Stack Developer Portfolio" />
-                <meta property="og:description" content="Projects, Skills, Certifications & More" />
+                <meta name="description" content="Mr.VVM (VVM) - Vetrivel Murugan P Full Stack Developer Portfolio. Explore projects, certifications, internships, skills, achievements, and developer journey." />
+                <meta name="author" content="Vetrivel Murugan P" />
+                <meta property="og:title" content="Mr.VVM | Full Stack Developer Portfolio" />
+                <meta property="og:description" content="Portfolio of Vetrivel Murugan P" />
                 <meta property="og:image" content="https://mr-vvm-2005.github.io/New-portfolio/profile.jpg" />
                 <meta property="og:url" content="https://mr-vvm-2005.github.io/New-portfolio/" />
                 <meta property="og:type" content="website" />
                 <link rel="manifest" href="./manifest.json" />
-                <meta name="keywords" content="Vetrivel Murugan P, Vetrivel Murugan, mr-vvm, vvm , mr.vvm, mr_vvm, mr-vvm-2005, Vetrivel Murugan Developer, Full Stack Developer Tamil Nadu, Vetrivel Murugan Portfolio" />
+                <meta name="keywords" content="VVM, Mr VVM, Mr.VVM, mr-vvm, mr_vvm, vetri, vetrivel, vetrivelvvm, pkvetrivel, Vetrivel Murugan, Vetrivel Murugan P, Full Stack Developer, Portfolio" />
                 <script 
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -67,6 +69,9 @@ export default function RootLayout({
                 />
             </head>
             <body className="bg-near-black text-foreground antialiased selection:bg-accent-violet/30 overflow-x-hidden">
+                <div style={{ display: "none" }}>
+                    Mr.VVM VVM mr-vvm mr_vvm vetri vetrivel vetrivelvvm pkvetrivel Vetrivel Murugan Vetrivel Murugan P Full Stack Developer
+                </div>
                 <LenisProvider>
                     <div className="noise-overlay" />
                     <ParticleBackground />
