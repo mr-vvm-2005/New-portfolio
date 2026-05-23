@@ -47,6 +47,24 @@ export default function RootLayout({
                 <meta property="og:type" content="website" />
                 <link rel="manifest" href="./manifest.json" />
                 <meta name="keywords" content="Vetrivel Murugan P, Vetrivel Murugan, mr-vvm, vvm , mr.vvm, mr_vvm, mr-vvm-2005, Vetrivel Murugan Developer, Full Stack Developer Tamil Nadu, Vetrivel Murugan Portfolio" />
+                <script 
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: `{
+                          "@context": "https://schema.org",
+                          "@type": "Person",
+                          "name": "Vetrivel Murugan P",
+                          "additionalName": "Mr.VVM",
+                          "alternateName": ["vvm", "mr.vvm","mr_vvm"],
+                          "url": "https://mr-vvm-2005.github.io/New-portfolio/",
+                          "jobTitle": "Full Stack Web Developer",
+                          "sameAs": [
+                            "https://in.linkedin.com/in/mrvvmoffical2005",
+                            "https://github.com"
+                          ]
+                        }`
+                    }}
+                />
             </head>
             <body className="bg-near-black text-foreground antialiased selection:bg-accent-violet/30 overflow-x-hidden">
                 <LenisProvider>
