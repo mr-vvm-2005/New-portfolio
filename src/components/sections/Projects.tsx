@@ -107,7 +107,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     <>
                         <Image
                             src={project.image}
-                            alt={project.title}
+                            alt={`${project.title} - Full Stack Web Application project by Vetrivel Murugan`}
                             fill
                             unoptimized
                             onError={() => setImgError(true)}

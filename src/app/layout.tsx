@@ -45,6 +45,8 @@ export default function RootLayout({
                 <meta property="og:image" content="https://mr-vvm-2005.github.io/New-portfolio/profile.jpg" />
                 <meta property="og:url" content="https://mr-vvm-2005.github.io/New-portfolio/" />
                 <meta property="og:type" content="website" />
+                <link rel="manifest" href="./manifest.json" />
+                <meta name="keywords" content="Vetrivel Murugan P, Vetrivel Murugan, mr-vvm, vvm , mr.vvm, mr_vvm, mr-vvm-2005, Vetrivel Murugan Developer, Full Stack Developer Tamil Nadu, Vetrivel Murugan Portfolio" />
             </head>
             <body className="bg-near-black text-foreground antialiased selection:bg-accent-violet/30 overflow-x-hidden">
                 <LenisProvider>

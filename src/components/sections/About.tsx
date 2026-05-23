@@ -77,7 +77,7 @@ export default function About() {
                                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 hover:border-accent-blue transition-colors duration-300 shadow-2xl shadow-[#6C63FF]/20 group">
                                     <Image
                                         src={getAssetPath("/profile.jpg")}
-                                        alt="Vetrivel Murugan P"
+                                        alt="Vetrivel Murugan P - Full Stack Developer Portfolio Picture"
                                         fill
                                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
@@ -131,9 +131,7 @@ export default function About() {
                             </h3>
                             <div className="space-y-4 text-base text-white/65 leading-relaxed">
                                 <p>
-                                    I am an <span className="text-white font-semibold">Aspiring Full Stack Developer</span> dedicated to crafting exceptional
-                                    and high-performance web experiences. My journey is defined by a commitment to mastering modern technologies
-                                    and delivering solutions that bridge the gap between functionality and design.
+                                    Hi, I am Vetrivel Murugan P, a passionate Full Stack Developer from Tamil Nadu. I am currently pursuing my degree in Information Technology at Dr. Sivanthi Aditanar College of Engineering. As a software engineer, I build high-performance web applications using modern tech stacks...
                                 </p>
                                 <p>
                                     I've completed <span className="text-[#6C63FF] font-semibold">2 internships</span> — a Full Stack Development internship at{" "}
