@@ -39,32 +39,26 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${inter.variable} ${poppins.variable} ${jetbrains.variable}`}>
             <head>
+                <link rel="sitemap" type="application/xml" href="/New-portfolio/sitemap.xml" />
                 <meta name="google-site-verification" content="TtiPYJxbGH25dlDgDVrU5oOYn_RVsVWmYZPHHdew_ak" />
-                <meta name="description" content="Mr.VVM (VVM) - Vetrivel Murugan P Full Stack Developer Portfolio. Explore projects, certifications, internships, skills, achievements, and developer journey." />
                 <meta name="author" content="Vetrivel Murugan P" />
-                <meta property="og:title" content="Mr.VVM | Full Stack Developer Portfolio" />
-                <meta property="og:description" content="Portfolio of Vetrivel Murugan P" />
-                <meta property="og:image" content="https://mr-vvm-2005.github.io/New-portfolio/profile.jpg" />
-                <meta property="og:url" content="https://mr-vvm-2005.github.io/New-portfolio/" />
-                <meta property="og:type" content="website" />
                 <link rel="manifest" href="./manifest.json" />
                 <meta name="keywords" content="VVM, Mr VVM, Mr.VVM, mr-vvm, mr_vvm, vetri, vetrivel, vetrivelvvm, pkvetrivel, Vetrivel Murugan, Vetrivel Murugan P, Full Stack Developer, Portfolio" />
                 <script 
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: `{
-                          "@context": "https://schema.org",
-                          "@type": "Person",
-                          "name": "Vetrivel Murugan P",
-                          "additionalName": "Mr.VVM",
-                          "alternateName": ["vvm", "mr.vvm","mr_vvm"],
-                          "url": "https://mr-vvm-2005.github.io/New-portfolio/",
-                          "jobTitle": "Full Stack Web Developer",
-                          "sameAs": [
-                            "https://in.linkedin.com/in/mrvvmoffical2005",
-                            "https://github.com"
-                          ]
-                        }`
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Mr.VVM Portfolio",
+  "alternateName": "Vetrivel Murugan P Portfolio",
+  "url": "https://mr-vvm-2005.github.io/New-portfolio/",
+  "author": {
+    "@type": "Person",
+    "name": "Vetrivel Murugan P",
+    "alternateName": "Mr.VVM"
+  }
+}`
                     }}
                 />
             </head>

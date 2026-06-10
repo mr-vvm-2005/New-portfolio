@@ -215,6 +215,7 @@ export default function Certificates() {
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
+                            suppressHydrationWarning={true}
                             className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest border transition-all duration-300 ${
                                 activeCategory === cat
                                     ? "bg-accent-blue text-white border-accent-blue shadow-[0_0_20px_rgba(59,130,246,0.3)]"

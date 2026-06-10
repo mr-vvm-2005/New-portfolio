@@ -6,10 +6,54 @@ import Projects from "@/components/sections/Projects";
 import Certificates from "@/components/sections/Certificates";
 import Contact from "@/components/sections/Contact";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
+import Script from "next/script";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://mr-vvm-2005.github.io/New-portfolio/",
+    }
+};
 
 export default function Home() {
     return (
         <main className="min-h-screen">
+            <Script id="person-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vetrivel Murugan P",
+  "alternateName": ["Mr.VVM", "Mr VVM", "VVM", "vetrivelvvm", "pkvetrivel", "mrvvm"],
+  "description": "Mr.VVM (Vetrivel Murugan P) is a Full Stack Developer from Tenkasi, Tamil Nadu, India. B.Tech IT student at Dr. Sivanthi Aditanar College of Engineering. Skilled in React, Next.js, Node.js, Python, SQL.",
+  "url": "https://mr-vvm-2005.github.io/New-portfolio/",
+  "image": "https://mr-vvm-2005.github.io/New-portfolio/profile.jpg",
+  "jobTitle": "Full Stack Developer",
+  "gender": "Male",
+  "birthDate": "2005-09-11",
+  "nationality": "Indian",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tenkasi",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Dr. Sivanthi Aditanar College of Engineering"
+  },
+  "email": "mailto:pkvetrivelvvm@gmail.com",
+  "telephone": "+91-7598611585",
+  "knowsAbout": [
+    "HTML5", "CSS3", "JavaScript", "ReactJS", "Next.js",
+    "Node.js", "Python", "SQL", "Tailwind CSS", "Spring Boot",
+    "IBM Cognos Analytics", "Full Stack Development"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/mrvvmoffical2005",
+    "https://github.com/mr-vvm-2005",
+    "https://x.com/vetrivelvvm",
+    "https://www.instagram.com/mr.vvm_official/"
+  ]
+}` }} />
             {/* Scroll Progress Bar */}
             <ScrollProgressBar />
 

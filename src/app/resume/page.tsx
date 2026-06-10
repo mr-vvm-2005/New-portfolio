@@ -3,12 +3,27 @@
 import { useRef } from "react";
 import { Printer } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function ResumePage() {
     const resumeRef = useRef<HTMLDivElement>(null);
 
     return (
         <div className="min-h-screen bg-gray-100 text-black p-4 md:p-8 print:p-0 flex justify-center">
+            <Script id="resume-person-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vetrivel Murugan P",
+  "alternateName": ["Mr.VVM", "Mr VVM", "VVM", "vetrivelvvm", "pkvetrivel"],
+  "description": "Resume of Mr.VVM (Vetrivel Murugan P) – Full Stack Developer from Tamil Nadu.",
+  "url": "https://mr-vvm-2005.github.io/New-portfolio/resume/",
+  "jobTitle": "Full Stack Developer",
+  "sameAs": [
+    "https://www.linkedin.com/in/mrvvmoffical2005",
+    "https://github.com/mr-vvm-2005",
+    "https://mr-vvm-2005.github.io/New-portfolio/"
+  ]
+}` }} />
             <style jsx global>{`
                 @media print {
                     @page { size: A4 portrait; margin: 4mm 10mm 4mm 10mm; }

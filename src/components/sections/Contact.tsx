@@ -110,6 +110,7 @@ export default function Contact() {
                                     <label className="text-xs uppercase tracking-widest text-white/40 ml-1">Message</label>
                                     <textarea
                                         name="message"
+                                        suppressHydrationWarning={true}
                                         rows={5}
                                         className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-blue/50 transition-all resize-none text-white"
                                         placeholder="Tell me more about your idea..."
@@ -123,6 +124,7 @@ export default function Contact() {
                                 )}
                                 <button
                                     type="submit"
+                                    suppressHydrationWarning={true}
                                     disabled={isSubmitting}
                                     className="w-full py-4 rounded-2xl bg-white text-[#000] font-bold uppercase tracking-widest hover:bg-accent-blue hover:text-white transition-all transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 border border-white disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
@@ -176,6 +178,7 @@ function InputGroup({ label, placeholder, type = "text", name }: { label: string
             <input
                 type={type}
                 name={name}
+                suppressHydrationWarning={true}
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-blue/50 transition-all text-white"
                 placeholder={placeholder}
