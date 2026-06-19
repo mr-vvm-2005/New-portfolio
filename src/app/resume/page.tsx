@@ -171,7 +171,7 @@ export default function ResumePage() {
                                     <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML • CSS • JS • AI</span>
                                 </div>
                                 <p className="text-[9px] text-gray-700 leading-snug">
-                                    Developed a full stack resume builder & analyzer, skill gap detector, and personalized roadmap generator, improving ATS match rates by ~35% for over ~200 users. Built using HTML, CSS, JavaScript, and AI tools to analyze resumes in real-time, detect skill gaps, and recommend curated learning roadmaps. Live: <a href="https://mrvvm-2005.github.io/Career-Navigator/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Career-Navigator/</a>
+                                    Developed a full stack resume builder & analyzer, skill gap detector, and personalized roadmap generator, improving ATS match rates by ~35% for over ~200 users. Built using HTML, CSS, JavaScript, and AI tools to analyze resumes in real-time, detect skill gaps, and recommend curated learning roadmaps. Live: <a href="https://mr-vvm-2005.github.io/Career-Navigator/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Career-Navigator/</a>
                                 </p>
                             </div>
                             <div className="break-inside-avoid">
@@ -180,7 +180,7 @@ export default function ResumePage() {
                                     <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">React • CSS • Vercel</span>
                                 </div>
                                 <p className="text-[9px] text-gray-700 leading-snug">
-                                    Designed a responsive booking platform with real-time doctor availability slots and patient scheduling, which reduced appointment scheduling overhead by ~40%. Engineered using React.js, CSS, and a REST API backend, deployable on Vercel to ensure seamless, instantaneous bookings. Live: <a href="https://dental-care-appointmentbooking.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">dental-care-appointmentbooking.vercel.app</a>
+                                    Designed a responsive booking platform with real-time doctor availability slots and patient scheduling, which reduced appointment scheduling overhead by ~40%. Engineered using React.js, CSS, and a REST API backend, deployable on Vercel to ensure seamless, instantaneous bookings. Live: <a href="https://dental-care-appointment-booking.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">dental-care-appointment-booking.vercel.app/</a>
                                 </p>
                             </div>
                             <div className="break-inside-avoid">
@@ -189,7 +189,7 @@ export default function ResumePage() {
                                     <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML • CSS • JS</span>
                                 </div>
                                 <p className="text-[9px] text-gray-700 leading-snug">
-                                    Created a responsive clone of a College ERP Portal featuring custom student profiles and faculty dashboards, improving mock attendance tracking efficiency by ~30%. Developed with HTML, CSS, and JavaScript, employing local storage to persist mock academic data across sessions.
+                                    Created a responsive clone of a College ERP Portal featuring custom student profiles and faculty dashboards, improving mock attendance tracking efficiency by ~30%. Developed with HTML, CSS, and JavaScript, employing local storage to persist mock academic data across sessions. Live: <a href="https://mr-vvm-2005.github.io/my-college-erp/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/my-college-erp/</a>
                                 </p>
                             </div>
                             <div className="break-inside-avoid">
@@ -198,7 +198,7 @@ export default function ResumePage() {
                                     <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">JS • Canvas</span>
                                 </div>
                                 <p className="text-[9px] text-gray-700 leading-snug">
-                                    Built a lightweight web application that enables instant resume generation and seamless PDF export using HTML5 Canvas and JavaScript. Enabled ~100% client-side data rendering, eliminating server latency and securing user privacy.
+                                    Built a lightweight web application that enables instant resume generation and seamless PDF export using HTML5 Canvas and JavaScript. Enabled ~100% client-side data rendering, eliminating server latency and securing user privacy. Live: <a href="https://mr-vvm-2005.github.io/Simple-resume-builder-project/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Simple-resume-builder-project/</a>
                                 </p>
                             </div>
                         </div>
