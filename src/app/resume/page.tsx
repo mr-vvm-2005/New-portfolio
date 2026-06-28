@@ -97,7 +97,7 @@ export default function ResumePage() {
                             Professional Summary
                         </h2>
                         <p className="text-[10px] text-justify leading-relaxed text-gray-700">
-                            Results-driven B.Tech Information Technology student and Full Stack Developer with practical experience gained through 2 internships, 4 live projects, and 22+ verified certifications. Proficient in designing scalable web applications using React.js, Node.js, REST API, and Spring Boot, while actively developing new projects. Experienced in utilizing IBM Cognos Analytics to process complex datasets and generate business intelligence dashboards.
+                            Result-oriented B.Tech Information Technology student and Full Stack Developer with hands-on experience through two internships, five live projects, and 22+ industry certifications. Proficient in frontend development (HTML5, CSS3, ES6+ JavaScript) and core backend frameworks (React.js, Node.js, Python, SQL, REST APIs). Experienced in data visualization and business intelligence utilizing IBM Cognos Analytics. Proven ability to build responsive web applications, design digital products, and deliver localized business solutions.
                         </p>
                     </section>
 
@@ -108,13 +108,13 @@ export default function ResumePage() {
                         </h2>
                         <div className="grid grid-cols-[90px_1fr] gap-y-1 text-[10px] gap-x-2">
                             <span className="font-bold text-gray-800">Frontend:</span>
-                            <span className="text-gray-700">React.js, Next.js, TypeScript (basic), Tailwind CSS, HTML5, CSS3, JavaScript (ES6+), Bootstrap, Responsive Web Design</span>
+                            <span className="text-gray-700">HTML5, CSS3, JavaScript (ES6+), React.js (basic), Next.js (basic), TypeScript (basic), Tailwind CSS (basic), Bootstrap (basic), Responsive Web Design</span>
 
                             <span className="font-bold text-gray-800">Backend:</span>
-                            <span className="text-gray-700">Node.js, Express.js, Python, Spring Boot, Spring Data JPA, Spring REST, SQLite, RESTful APIs, REST API design, JWT (basic), MVC architecture</span>
+                            <span className="text-gray-700">Node.js (basic), Express.js (basic), Python (basic), Spring Boot (basic), Spring Data JPA (basic), Spring REST (basic), SQLite (basic), RESTful APIs (basic), REST API design (basic), JWT (basic), MVC architecture (basic)</span>
 
                             <span className="font-bold text-gray-800">Database & BI:</span>
-                            <span className="text-gray-700">SQL, IBM Cognos Analytics, MongoDB (basic)</span>
+                            <span className="text-gray-700">SQL (basic), IBM Cognos Analytics, MongoDB (basic)</span>
 
                             <span className="font-bold text-gray-800">Tools:</span>
                             <span className="text-gray-700">Git, GitHub, VS Code, Figma, Vercel, Postman, AWS (Basics)</span>
@@ -130,6 +130,30 @@ export default function ResumePage() {
                             Experience
                         </h2>
                         <div className="space-y-3">
+                            {/* Freelance */}
+                            <div className="break-inside-avoid">
+                                <div className="flex justify-between items-baseline">
+                                    <h3 className="text-[11px] font-bold text-gray-900">Freelance Full Stack Developer</h3>
+                                    <span className="text-[9px] font-semibold text-gray-500">2025 – Present</span>
+                                </div>
+                                <div className="text-[9px] text-blue-700 font-semibold mb-1">Self-Employed · Remote</div>
+                                <ul className="list-disc ml-4 text-[9px] text-gray-700 space-y-0.5 pl-1">
+                                    <li>Developed and deployed business websites for clients and personal projects, optimizing for SEO and mobile responsiveness.</li>
+                                    <li>Built responsive UI and integrated contact forms, localization toggles, and direct customer call/WhatsApp triggers.</li>
+                                    <li>Created modular, production-ready website templates tailored for local businesses (salon, restaurant, retail).</li>
+                                    <li>Managed full development lifecycle from requirements gathering to hosting, domain configuration, and continuous deployment.</li>
+                                </ul>
+                                <div className="pl-2.5 mt-1 border-l border-gray-300 ml-1.5">
+                                    <div className="flex justify-between items-baseline mb-0.5">
+                                        <h4 className="text-[9.5px] font-bold text-gray-800">Founder & Developer — site studio.in</h4>
+                                        <a href="https://www.instagram.com/site_studio.in/" target="_blank" rel="noopener noreferrer" className="text-[8px] font-semibold text-blue-700 hover:underline">Visit site studio.in</a>
+                                    </div>
+                                    <ul className="list-disc ml-3 text-[8.5px] text-gray-600 space-y-0.5 pl-1">
+                                        <li>Built a freelance web development platform to offer client-focused business website solutions.</li>
+                                        <li>Designed multiple templates, implemented pricing structures, and optimized landing pages to capture freelance opportunities.</li>
+                                    </ul>
+                                </div>
+                            </div>
                             {/* Adroit */}
                             <div className="break-inside-avoid">
                                 <div className="flex justify-between items-baseline">
@@ -171,7 +195,16 @@ export default function ResumePage() {
                                     <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML • CSS • JS • AI</span>
                                 </div>
                                 <p className="text-[9px] text-gray-700 leading-snug">
-                                    Developed a full stack resume builder & analyzer, skill gap detector, and personalized roadmap generator, improving ATS match rates by ~35% for over ~200 users. Built using HTML, CSS, JavaScript, and AI tools to analyze resumes in real-time, detect skill gaps, and recommend curated learning roadmaps. Live: <a href="https://mr-vvm-2005.github.io/Career-Navigator/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Career-Navigator/</a>
+                                    Developed an AI-powered career readiness web application featuring a resume analyzer, skill gap detector, and customized learning roadmap generator. Integrated client-side parsing rules that improved ATS compliance rates by ~35% for student profiles. Live: <a href="https://mr-vvm-2005.github.io/Career-Navigator/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Career-Navigator/</a>
+                                </p>
+                            </div>
+                            <div className="break-inside-avoid">
+                                <div className="flex justify-between items-baseline">
+                                    <h3 className="text-[10.5px] font-bold text-gray-900">RSM Traders (Wholesale & Retail Platform)</h3>
+                                    <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML5 • CSS3 • JS • Netlify • SEO</span>
+                                </div>
+                                <p className="text-[9px] text-gray-700 leading-snug">
+                                    Designed and hosted a fully responsive product catalog platform for a regional distributor. Integrated bilingual localization (English/Tamil) and optimized for local search visibility (SEO) via Google Search Console. Features direct WhatsApp call-to-action triggers and Netlify form handling to increase client inquiries by ~25%. Live: <a href="https://rsm-traders.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">rsm-traders.netlify.app/</a>
                                 </p>
                             </div>
                             <div className="break-inside-avoid">
@@ -180,16 +213,7 @@ export default function ResumePage() {
                                     <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">React • CSS • Vercel</span>
                                 </div>
                                 <p className="text-[9px] text-gray-700 leading-snug">
-                                    Designed a responsive booking platform with real-time doctor availability slots and patient scheduling, which reduced appointment scheduling overhead by ~40%. Engineered using React.js, CSS, and a REST API backend, deployable on Vercel to ensure seamless, instantaneous bookings. Live: <a href="https://dental-care-appointment-booking.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">dental-care-appointment-booking.vercel.app/</a>
-                                </p>
-                            </div>
-                            <div className="break-inside-avoid">
-                                <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[10.5px] font-bold text-gray-900">College ERP Portal (Clone)</h3>
-                                    <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML • CSS • JS</span>
-                                </div>
-                                <p className="text-[9px] text-gray-700 leading-snug">
-                                    Created a responsive clone of a College ERP Portal featuring custom student profiles and faculty dashboards, improving mock attendance tracking efficiency by ~30%. Developed with HTML, CSS, and JavaScript, employing local storage to persist mock academic data across sessions. Live: <a href="https://mr-vvm-2005.github.io/my-college-erp/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/my-college-erp/</a>
+                                    Engineered a responsive medical appointment booking platform featuring real-time doctor availability and patient scheduling. Implemented REST API endpoints and state logic to reduce scheduling overhead by ~40%. Live: <a href="https://dental-care-appointment-booking.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">dental-care-appointment-booking.vercel.app/</a>
                                 </p>
                             </div>
                             <div className="break-inside-avoid">
@@ -198,7 +222,7 @@ export default function ResumePage() {
                                     <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">JS • Canvas</span>
                                 </div>
                                 <p className="text-[9px] text-gray-700 leading-snug">
-                                    Built a lightweight web application that enables instant resume generation and seamless PDF export using HTML5 Canvas and JavaScript. Enabled ~100% client-side data rendering, eliminating server latency and securing user privacy. Live: <a href="https://mr-vvm-2005.github.io/Simple-resume-builder-project/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Simple-resume-builder-project/</a>
+                                    Built a high-performance client-side resume generator featuring custom template rendering and HTML5 Canvas-based PDF exporting. Achieved instantaneous rendering and zero server latency to protect user privacy. Live: <a href="https://mr-vvm-2005.github.io/Simple-resume-builder-project/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Simple-resume-builder-project/</a>
                                 </p>
                             </div>
                         </div>

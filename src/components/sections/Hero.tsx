@@ -96,7 +96,7 @@ export default function Hero() {
                     transition={{ duration: 1, delay: 1.2 }}
                     className="text-lg md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto min-h-[4rem] flex items-center justify-center"
                 >
-                    <Typewriter texts={["Full Stack Developer", "React Developer", "Python Enthusiast", "UI/UX Thinker"]} />
+                    <Typewriter texts={["Full Stack Web Developer", "Frontend Developer", "Freelance Developer", "UI/UX Designer"]} />
                 </motion.div>
 
                 <motion.div

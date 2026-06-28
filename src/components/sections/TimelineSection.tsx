@@ -10,13 +10,49 @@ interface TimelineItem {
     subtitle: string;
     location: string;
     date: string;
-    details?: string;
+    details?: string | React.ReactNode;
     icon: React.ReactNode;
     badge?: string;
     completed?: boolean;
 }
 
 const timelineData: TimelineItem[] = [
+    {
+        id: "exp-3",
+        type: "Experience",
+        title: "Freelance Full Stack Developer",
+        subtitle: "Self-Employed",
+        location: "Remote",
+        date: "2025 – Present",
+        details: (
+            <div className="space-y-3 text-left">
+                <ul className="list-disc pl-4 space-y-1">
+                    <li>Developed and deployed business websites for clients and personal projects, optimizing for speed, SEO, and responsiveness.</li>
+                    <li>Built responsive UI and integrated contact forms, localization toggles, and direct customer call/WhatsApp triggers.</li>
+                    <li>Created modular, production-ready website templates tailored for retail, restaurants, salons, and local businesses.</li>
+                </ul>
+                <div className="mt-3 pt-3 border-t border-white/10">
+                    <div className="flex justify-between items-baseline mb-1">
+                        <span className="font-semibold text-white">Founder & Developer — site studio.in</span>
+                        <a 
+                            href="https://www.instagram.com/site_studio.in/" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-accent-violet hover:underline"
+                        >
+                            Visit site studio.in →
+                        </a>
+                    </div>
+                    <ul className="list-disc pl-4 space-y-1 text-white/40">
+                        <li>Built a freelance web development platform to offer client-focused business website solutions.</li>
+                        <li>Designed and developed multiple industry-specific templates to streamline client onboarding.</li>
+                    </ul>
+                </div>
+            </div>
+        ),
+        icon: <Briefcase size={18} />,
+        completed: false,
+    },
     {
         id: "exp-2",
         type: "Experience",
@@ -122,7 +158,7 @@ export default function TimelineSection() {
                                         </div>
                                         <div className="text-sm text-white/40 mb-4">{item.location}</div>
                                         {item.details && (
-                                            <p className="text-sm text-white/50 leading-relaxed font-light mb-4">{item.details}</p>
+                                            <div className="text-sm text-white/50 leading-relaxed font-light mb-4">{item.details}</div>
                                         )}
                                         {item.badge && (
                                             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-[10px] font-bold tracking-widest uppercase border border-accent-blue/20">

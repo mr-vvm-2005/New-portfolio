@@ -18,7 +18,7 @@ interface Project {
 const projects: Project[] = [
     {
         title: "Dental Care Appointment Booking",
-        description: "A comprehensive platform for booking dental appointments with real-time availability and user-friendly interface.",
+        description: "An interactive patient scheduling platform featuring real-time doctor availability slots and instant appointment booking workflows, reducing operational scheduling overhead by ~40%.",
         link: "https://dental-care-appointment-booking.vercel.app/",
         github: "https://github.com/mr-vvm-2005/Dental_care_appointment_booking.git",
         tags: ["React", "CSS", "Vercel"],
@@ -26,7 +26,7 @@ const projects: Project[] = [
     },
     {
         title: "College ERP Portal (Clone)",
-        description: "A full-featured ERP system clone for college management including student and faculty modules.",
+        description: "A modular student-faculty portal clone that simulates course registrations, grading sheets, and attendance management with secure local storage data persistence.",
         link: "https://mr-vvm-2005.github.io/my-college-erp/",
         github: "https://github.com/mr-vvm-2005/my-college-erp.git",
         tags: ["HTML", "CSS", "JavaScript"],
@@ -34,7 +34,7 @@ const projects: Project[] = [
     },
     {
         title: "Simple Resume Builder",
-        description: "A clean and efficient tool for generating professional resumes in minutes with downloadable PDF feature.",
+        description: "A lightweight client-side application utilizing HTML5 Canvas to generate and download professionally formatted PDF resumes instantly with zero server latency.",
         link: "https://mr-vvm-2005.github.io/Simple-resume-builder-project/",
         github: "https://github.com/mr-vvm-2005/Simple-resume-builder-project.git",
         tags: ["JavaScript", "HTML", "Canvas"],
@@ -42,11 +42,19 @@ const projects: Project[] = [
     },
     {
         title: "CareerNavigator",
-        description: "A web-based career preparation platform helping students improve placement readiness with an ATS-optimized resume builder, skill gap analysis, personalized learning roadmaps, and curated resources.",
+        description: "An AI-powered career readiness platform that parses student resumes, detects skill gaps, recommends targeted learning paths, and optimizes resumes for ATS compliance.",
         link: "https://mr-vvm-2005.github.io/Career-Navigator/",
         github: "https://github.com/mr-vvm-2005/Career-Navigator",
         tags: ["HTML", "CSS", "JavaScript", "AI"],
         image: getAssetPath("/previews/career-navigator.png"),
+    },
+    {
+        title: "RSM Traders",
+        description: "A high-performance retail catalog platform optimized for local search visibility, featuring bilingual (English/Tamil) support, WhatsApp order redirection, and seamless Netlify form integration.",
+        link: "https://rsm-traders.netlify.app/",
+        github: "https://github.com/mr-vvm-2005/RSM-Traders.git",
+        tags: ["HTML5", "CSS3", "JavaScript", "Netlify", "SEO"],
+        image: getAssetPath("/previews/rsm-traders.png"),
     },
 ];
 

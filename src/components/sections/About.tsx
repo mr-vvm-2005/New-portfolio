@@ -19,7 +19,7 @@ const techStack = [
 const stats = [
     { value: "2",   label: "Internships" },
     { value: "22+", label: "Certifications" },
-    { value: "4",   label: "Projects Built" },
+    { value: "5",   label: "Projects Built" },
     { value: "3+",  label: "Years Learning" },
 ];
 
@@ -131,13 +131,16 @@ export default function About() {
                             </h3>
                             <div className="space-y-4 text-base text-white/65 leading-relaxed">
                                 <p>
-                                    Hi, I am Vetrivel Murugan P, a passionate Full Stack Developer from Tamil Nadu. I am currently pursuing my degree in Information Technology at Dr. Sivanthi Aditanar College of Engineering. As a software engineer, I build high-performance web applications using modern tech stacks...
+                                    Hi, I am Vetrivel Murugan P, a Full Stack Developer based in Tamil Nadu, India. Currently pursuing my B.Tech in Information Technology at Dr. Sivanthi Aditanar College of Engineering, I specialize in building responsive, user-centric web applications and robust digital platforms.
                                 </p>
                                 <p>
-                                    I've completed <span className="text-[#6C63FF] font-semibold">2 internships</span> — a Full Stack Development internship at{" "}
+                                    I have completed <span className="text-[#6C63FF] font-semibold">2 internships</span> — a Full Stack Development internship at{" "}
                                     <span className="text-white border-b border-white/20">IPCS Global</span>, and a Virtual IBM Cognos Analytics internship at{" "}
                                     <span className="text-white border-b border-white/20">Adroit Technologies</span>. I am also enrolled in the{" "}
-                                    <span className="text-[#00D4FF]">NxtWave CCBP 4.0 Full Stack Program</span>.
+                                    <span className="text-[#00D4FF]">NxtWave CCBP 4.0 Full Stack Program</span> to master advanced software architecture.
+                                </p>
+                                <p>
+                                    Beyond academia, I work as a Freelance Full Stack Developer and founded <a href="https://www.instagram.com/site_studio.in/" target="_blank" rel="noopener noreferrer" className="text-accent-blue font-semibold hover:underline">site studio.in</a>, where I build high-performance retail catalogs, business landing pages, and custom templates for local clients.
                                 </p>
                             </div>
 
