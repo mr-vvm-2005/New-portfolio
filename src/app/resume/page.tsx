@@ -10,6 +10,8 @@ export default function ResumePage() {
 
     return (
         <div className="min-h-screen bg-gray-100 text-black p-4 md:p-8 print:p-0 flex justify-center">
+            <title>Resume | Vetrivel Murugan P - Full Stack Developer</title>
+            <meta name="description" content="Official Resume of Vetrivel Murugan P (Mr.VVM) - Full Stack Developer. View technical skills, experience, projects, and certifications." />
             <Script id="resume-person-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
   "@context": "https://schema.org",
   "@type": "Person",
@@ -26,19 +28,26 @@ export default function ResumePage() {
 }` }} />
             <style jsx global>{`
                 @media print {
-                    @page { size: A4 portrait; margin: 4mm 10mm 4mm 10mm; }
+                    @page { size: A4 portrait; margin: 3.5mm 8mm 3.5mm 8mm; }
                     body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
                     #resume-content { box-shadow: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
                     .print-hide { display: none !important; }
-                    h1 { font-size: 18pt !important; margin-bottom: 1mm !important; }
-                    .role-title { font-size: 10pt !important; margin-bottom: 1.5mm !important; }
-                    h2 { font-size: 9.5pt !important; margin-top: 2mm !important; margin-bottom: 1mm !important; border-bottom-width: 1px !important; padding-bottom: 0.5mm !important; }
-                    h3 { font-size: 9pt !important; margin-bottom: 0.5mm !important; }
-                    p, li, span, div { font-size: 8.5pt !important; line-height: 1.25 !important; }
-                    section { margin-bottom: 1.5mm !important; break-inside: avoid; }
-                    .break-inside-avoid { break-inside: avoid; }
-                    ul { margin-top: 0.5mm !important; padding-left: 4mm !important; }
-                    li { margin-bottom: 0.5mm !important; }
+                    h1 { font-size: 15pt !important; margin-bottom: 0.5mm !important; }
+                    .role-title { font-size: 8.5pt !important; margin-bottom: 1mm !important; }
+                    h2 { font-size: 8.5pt !important; margin-top: 1.5mm !important; margin-bottom: 0.8mm !important; border-bottom-width: 1px !important; padding-bottom: 0.3mm !important; }
+                    h3 { font-size: 8pt !important; margin-bottom: 0.3mm !important; }
+                    p, li, span, div, a { font-size: 7.6pt !important; line-height: 1.2 !important; }
+                    section { margin-bottom: 1mm !important; }
+                    ul { margin-top: 0.3mm !important; padding-left: 3mm !important; }
+                    li { margin-bottom: 0.3mm !important; }
+                    
+                    /* Override Tailwind spacing for print */
+                    #resume-content .space-y-3 > * + * { margin-top: 1mm !important; }
+                    #resume-content .space-y-2 > * + * { margin-top: 0.8mm !important; }
+                    #resume-content .space-y-4 > * + * { margin-top: 1.2mm !important; }
+                    #resume-content .grid-cols-2 { gap: 4mm !important; }
+                    #resume-content header { padding-bottom: 1mm !important; margin-bottom: 1.5mm !important; }
+                    #resume-content .pl-2.5 { padding-left: 1.5mm !important; margin-top: 0.5mm !important; }
                 }
             `}</style>
 
@@ -97,7 +106,7 @@ export default function ResumePage() {
                             Professional Summary
                         </h2>
                         <p className="text-[10px] text-justify leading-relaxed text-gray-700">
-                            Result-oriented B.Tech Information Technology student and Full Stack Developer with hands-on experience through two internships, five live projects, and 22+ industry certifications. Proficient in frontend development (HTML5, CSS3, ES6+ JavaScript) and core backend frameworks (React.js, Node.js, Python, SQL, REST APIs). Experienced in data visualization and business intelligence utilizing IBM Cognos Analytics. Proven ability to build responsive web applications, design digital products, and deliver localized business solutions.
+                            Result-oriented B.Tech Information Technology student and Full Stack Developer with hands-on experience through two internships, five live projects, and 24+ industry certifications. Proficient in frontend development (HTML5, CSS3, ES6+ JavaScript) and core backend frameworks (React.js, Node.js, Python, SQL, REST APIs). Experienced in data visualization and business intelligence utilizing IBM Cognos Analytics. Proven ability to build responsive web applications, design digital products, and deliver localized business solutions.
                         </p>
                     </section>
 
@@ -260,9 +269,11 @@ export default function ResumePage() {
 
                         <section>
                             <h2 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-[0.15em] border-b border-gray-300 pb-1 mb-2">
-                                Key Certifications (22+ Total)
+                                Key Certifications (24+ Total)
                             </h2>
                             <ul className="text-[9px] text-gray-700 space-y-0.5">
+                                <li><span className="font-semibold text-gray-900">Docker Foundations Professional</span> | LinkedIn & Docker</li>
+                                <li><span className="font-semibold text-gray-900">Microsoft Azure AI Essentials</span> | Microsoft & LinkedIn</li>
                                 <li><span className="font-semibold text-gray-900">Software Engineering Job Simulation</span> | JP Morgan</li>
                                 <li><span className="font-semibold text-gray-900">Spring Boot, JPA, REST</span> | Infosys</li>
                                 <li><span className="font-semibold text-gray-900">Front End Technologies</span> | IBM & Naan Mudhalvan</li>

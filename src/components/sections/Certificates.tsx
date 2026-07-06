@@ -11,6 +11,22 @@ type Category = "All" | "Frontend" | "Backend" | "AI/ML" | "Tools" | "Internship
 const categories: Category[] = ["All", "Frontend", "Backend", "AI/ML", "Tools", "Internship"];
 
 const certificates = [
+    {
+        title: "Docker Foundations Professional Certificate",
+        issuer: "LinkedIn Learning & Docker",
+        date: "Jul 2026",
+        category: "Tools" as Category,
+        link: "https://www.linkedin.com/learning/certificates/546f01c5db71ef27ff21e6574ff896760c829c9c0760516d2a805f606137745f",
+        highlight: true,
+    },
+    {
+        title: "Microsoft Azure AI Essentials Professional Certificate",
+        issuer: "Microsoft & LinkedIn",
+        date: "Jul 2026",
+        category: "AI/ML" as Category,
+        link: "https://www.linkedin.com/learning/certificates/ebf76a1dd44d81d825cecd028cea62201982001ddde0d777bcb97498111adcef",
+        highlight: true,
+    },
     // Existing 15
     {
         title: "Internship Certificate",
@@ -205,7 +221,7 @@ export default function Certificates() {
                         <p className="text-white/40 text-sm md:text-base">Validated expertise through globally recognized organizations.</p>
                     </div>
                     <div className="text-accent-blue font-mono text-xs md:text-sm tracking-widest uppercase">
-                        22 Total Verified
+                        24 Total Verified
                     </div>
                 </div>
 
