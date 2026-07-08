@@ -39,7 +39,7 @@ export default function ResumePage() {
                     }
                     #resume-content {
                         margin: 0 !important;
-                        padding: 12mm 15mm 12mm 15mm !important;
+                        padding: 8mm 12mm 8mm 12mm !important;
                         width: 210mm !important;
                         height: 297mm !important;
                         box-shadow: none !important;
@@ -50,22 +50,22 @@ export default function ResumePage() {
                         background: white !important;
                     }
                     .print-hide { display: none !important; }
-                    h1 { font-size: 19pt !important; margin-bottom: 0.5mm !important; }
-                    .role-title { font-size: 9.5pt !important; margin-bottom: 1.2mm !important; }
-                    h2 { font-size: 10.5pt !important; margin-top: 3.5mm !important; margin-bottom: 1.5mm !important; border-bottom-width: 1px !important; padding-bottom: 0.4mm !important; }
-                    h3 { font-size: 9.2pt !important; margin-bottom: 0.6mm !important; }
-                    p, li, span, div, a { font-size: 8.2pt !important; line-height: 1.25 !important; }
-                    section { margin-bottom: 3.5mm !important; }
-                    ul { margin-top: 0.8mm !important; padding-left: 4mm !important; }
-                    li { margin-bottom: 0.8mm !important; }
+                    h1 { font-size: 16pt !important; margin-bottom: 0.3mm !important; }
+                    .role-title { font-size: 8.8pt !important; margin-bottom: 0.8mm !important; }
+                    h2 { font-size: 9.2pt !important; margin-top: 1.8mm !important; margin-bottom: 1mm !important; border-bottom-width: 1px !important; padding-bottom: 0.3mm !important; }
+                    h3 { font-size: 8.2pt !important; margin-bottom: 0.3mm !important; }
+                    p, li, span, div, a { font-size: 7.6pt !important; line-height: 1.22 !important; }
+                    section { margin-bottom: 2mm !important; }
+                    ul { margin-top: 0.4mm !important; padding-left: 3mm !important; }
+                    li { margin-bottom: 0.4mm !important; }
                     
                     /* Override Tailwind spacing for print */
-                    #resume-content .space-y-3 > * + * { margin-top: 2mm !important; }
-                    #resume-content .space-y-2 > * + * { margin-top: 1.5mm !important; }
-                    #resume-content .space-y-4 > * + * { margin-top: 2.5mm !important; }
-                    #resume-content .grid-cols-2 { gap: 6mm !important; }
-                    #resume-content header { padding-bottom: 1.5mm !important; margin-bottom: 3.5mm !important; }
-                    #resume-content .pl-2.5 { padding-left: 2mm !important; margin-top: 0.8mm !important; }
+                    #resume-content .space-y-3 > * + * { margin-top: 1.2mm !important; }
+                    #resume-content .space-y-2 > * + * { margin-top: 0.8mm !important; }
+                    #resume-content .space-y-4 > * + * { margin-top: 1.5mm !important; }
+                    #resume-content .grid-cols-2 { gap: 5mm !important; }
+                    #resume-content header { padding-bottom: 1mm !important; margin-bottom: 2mm !important; }
+                    #resume-content .pl-2.5 { padding-left: 1.5mm !important; margin-top: 0.4mm !important; }
                 }
             `}</style>
 
@@ -100,21 +100,18 @@ export default function ResumePage() {
                     <p className="role-title text-[13px] font-bold text-blue-700 uppercase tracking-widest mb-2">
                         Full Stack Developer
                     </p>
-                    <div className="flex flex-col items-center gap-y-1 text-[10px] text-gray-600 font-medium print:gap-y-0">
-                        <div className="flex flex-wrap justify-center items-center gap-x-3">
-                            <a href="mailto:pkvetrivelvvm@gmail.com" className="hover:underline text-blue-700">pkvetrivelvvm@gmail.com</a>
-                            <span className="text-gray-300">|</span>
-                            <a href="tel:+917598611585" className="hover:underline text-blue-700">+91 7598611585</a>
-                            <span className="text-gray-300">|</span>
-                            <span>Tenkasi, Tamil Nadu, India</span>
-                        </div>
-                        <div className="flex flex-wrap justify-center items-center gap-x-3">
-                            <a href="https://linkedin.com/in/mrvvmoffical2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">linkedin.com/in/mrvvmoffical2005</a>
-                            <span className="text-gray-300">|</span>
-                            <a href="https://github.com/mr-vvm-2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">github.com/mr-vvm-2005</a>
-                            <span className="text-gray-300">|</span>
-                            <a href="https://mr-vvm-2005.github.io/New-portfolio/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">Portfolio</a>
-                        </div>
+                    <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-[10px] text-gray-600 font-medium print:flex-nowrap print:gap-x-2.5">
+                        <a href="mailto:pkvetrivelvvm@gmail.com" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">pkvetrivelvvm@gmail.com</a>
+                        <span className="text-gray-300 print:text-gray-400">•</span>
+                        <a href="tel:+917598611585" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">+91 7598611585</a>
+                        <span className="text-gray-300 print:text-gray-400">•</span>
+                        <a href="https://linkedin.com/in/mrvvmoffical2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">linkedin.com/in/mrvvmoffical2005</a>
+                        <span className="text-gray-300 print:text-gray-400">•</span>
+                        <a href="https://github.com/mr-vvm-2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">github.com/mr-vvm-2005</a>
+                        <span className="text-gray-300 print:text-gray-400">•</span>
+                        <a href="https://mr-vvm-2005.github.io/New-portfolio/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">Portfolio</a>
+                        <span className="text-gray-300 print:text-gray-400">•</span>
+                        <span className="print:text-gray-800">Tenkasi, Tamil Nadu, India</span>
                     </div>
                 </header>
 
