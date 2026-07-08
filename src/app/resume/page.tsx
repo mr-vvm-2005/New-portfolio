@@ -100,18 +100,21 @@ export default function ResumePage() {
                     <p className="role-title text-[13px] font-bold text-blue-700 uppercase tracking-widest mb-2">
                         Full Stack Developer
                     </p>
-                    <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-[10px] text-gray-600 font-medium print:flex-nowrap print:gap-x-2.5">
-                        <a href="mailto:pkvetrivelvvm@gmail.com" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">pkvetrivelvvm@gmail.com</a>
-                        <span className="text-gray-300 print:text-gray-400">•</span>
-                        <a href="tel:+917598611585" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">+91 7598611585</a>
-                        <span className="text-gray-300 print:text-gray-400">•</span>
-                        <a href="https://linkedin.com/in/mrvvmoffical2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">linkedin.com/in/mrvvmoffical2005</a>
-                        <span className="text-gray-300 print:text-gray-400">•</span>
-                        <a href="https://github.com/mr-vvm-2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">github.com/mr-vvm-2005</a>
-                        <span className="text-gray-300 print:text-gray-400">•</span>
-                        <a href="https://mr-vvm-2005.github.io/New-portfolio/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">Portfolio</a>
-                        <span className="text-gray-300 print:text-gray-400">•</span>
-                        <span className="print:text-gray-800">Tenkasi, Tamil Nadu, India</span>
+                    <div className="flex flex-col items-center gap-y-1 text-[10px] text-gray-600 font-medium print:gap-y-0.5">
+                        <div className="flex flex-wrap justify-center items-center gap-x-3 whitespace-nowrap">
+                            <a href="mailto:pkvetrivelvvm@gmail.com" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">pkvetrivelvvm@gmail.com</a>
+                            <span className="text-gray-300 print:text-gray-400">•</span>
+                            <a href="tel:+917598611585" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">+91 7598611585</a>
+                            <span className="text-gray-300 print:text-gray-400">•</span>
+                            <span className="print:text-gray-800">Tenkasi, Tamil Nadu, India</span>
+                        </div>
+                        <div className="flex flex-wrap justify-center items-center gap-x-3 whitespace-nowrap">
+                            <a href="https://linkedin.com/in/mrvvmoffical2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">linkedin.com/in/mrvvmoffical2005</a>
+                            <span className="text-gray-300 print:text-gray-400">•</span>
+                            <a href="https://github.com/mr-vvm-2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">github.com/mr-vvm-2005</a>
+                            <span className="text-gray-300 print:text-gray-400">•</span>
+                            <a href="https://mr-vvm-2005.github.io/New-portfolio/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">Portfolio</a>
+                        </div>
                     </div>
                 </header>
 
