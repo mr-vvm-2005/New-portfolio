@@ -28,13 +28,20 @@ export default function ResumePage() {
 }` }} />
             <style jsx global>{`
                 @media print {
-                    @page { size: A4 portrait; margin: 0; }
+                    @page { size: A4 portrait; margin: 8mm 10mm 8mm 10mm; }
                     body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    * {
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+                    }
+                    h1, h2, h3, h4, .role-title {
+                        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+                    }
                     #resume-content {
                         margin: 0 !important;
-                        padding: 10mm 12mm 10mm 12mm !important;
-                        width: 210mm !important;
-                        height: 297mm !important;
+                        padding: 0 !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        height: 100% !important;
                         box-shadow: none !important;
                         box-sizing: border-box !important;
                         overflow: hidden !important;
