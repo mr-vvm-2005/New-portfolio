@@ -28,9 +28,19 @@ export default function ResumePage() {
 }` }} />
             <style jsx global>{`
                 @media print {
-                    @page { size: A4 portrait; margin: 3.5mm 8mm 3.5mm 8mm; }
+                    @page { size: A4 portrait; margin: 0; }
                     body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-                    #resume-content { box-shadow: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
+                    #resume-content {
+                        margin: 0 !important;
+                        padding: 10mm 12mm 10mm 12mm !important;
+                        width: 210mm !important;
+                        height: 297mm !important;
+                        box-shadow: none !important;
+                        box-sizing: border-box !important;
+                        overflow: hidden !important;
+                        display: flex !important;
+                        flex-direction: column !important;
+                    }
                     .print-hide { display: none !important; }
                     h1 { font-size: 14pt !important; margin-bottom: 0.3mm !important; }
                     .role-title { font-size: 7.8pt !important; margin-bottom: 0.8mm !important; }
