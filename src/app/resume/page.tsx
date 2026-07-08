@@ -50,22 +50,22 @@ export default function ResumePage() {
                         background: white !important;
                     }
                     .print-hide { display: none !important; }
-                    h1 { font-size: 15.5pt !important; margin-bottom: 0.5mm !important; }
-                    .role-title { font-size: 8.5pt !important; margin-bottom: 1.2mm !important; }
-                    h2 { font-size: 8.8pt !important; margin-top: 2.2mm !important; margin-bottom: 1mm !important; border-bottom-width: 1px !important; padding-bottom: 0.3mm !important; }
-                    h3 { font-size: 8.2pt !important; margin-bottom: 0.3mm !important; }
-                    p, li, span, div, a { font-size: 7.3pt !important; line-height: 1.22 !important; }
-                    section { margin-bottom: 1.8mm !important; }
-                    ul { margin-top: 0.4mm !important; padding-left: 3mm !important; }
-                    li { margin-bottom: 0.4mm !important; }
+                    h1 { font-size: 19pt !important; margin-bottom: 0.5mm !important; }
+                    .role-title { font-size: 9.5pt !important; margin-bottom: 1.2mm !important; }
+                    h2 { font-size: 10.5pt !important; margin-top: 3.5mm !important; margin-bottom: 1.5mm !important; border-bottom-width: 1px !important; padding-bottom: 0.4mm !important; }
+                    h3 { font-size: 9.2pt !important; margin-bottom: 0.6mm !important; }
+                    p, li, span, div, a { font-size: 8.2pt !important; line-height: 1.25 !important; }
+                    section { margin-bottom: 3.5mm !important; }
+                    ul { margin-top: 0.8mm !important; padding-left: 4mm !important; }
+                    li { margin-bottom: 0.8mm !important; }
                     
                     /* Override Tailwind spacing for print */
-                    #resume-content .space-y-3 > * + * { margin-top: 1mm !important; }
-                    #resume-content .space-y-2 > * + * { margin-top: 0.8mm !important; }
-                    #resume-content .space-y-4 > * + * { margin-top: 1.2mm !important; }
-                    #resume-content .grid-cols-2 { gap: 5mm !important; }
-                    #resume-content header { padding-bottom: 0.8mm !important; margin-bottom: 1.5mm !important; }
-                    #resume-content .pl-2.5 { padding-left: 1.5mm !important; margin-top: 0.4mm !important; }
+                    #resume-content .space-y-3 > * + * { margin-top: 2mm !important; }
+                    #resume-content .space-y-2 > * + * { margin-top: 1.5mm !important; }
+                    #resume-content .space-y-4 > * + * { margin-top: 2.5mm !important; }
+                    #resume-content .grid-cols-2 { gap: 6mm !important; }
+                    #resume-content header { padding-bottom: 1.5mm !important; margin-bottom: 3.5mm !important; }
+                    #resume-content .pl-2.5 { padding-left: 2mm !important; margin-top: 0.8mm !important; }
                 }
             `}</style>
 
