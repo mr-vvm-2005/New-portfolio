@@ -28,9 +28,9 @@ export default function ResumePage() {
 }` }} />
             <style jsx global>{`
                 @media print {
-                    @page { size: A4 portrait; margin: 8mm 10mm 8mm 10mm; }
-                    html, body { height: 100% !important; margin: 0 !important; padding: 0 !important; }
-                    body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    @page { size: A4 portrait; margin: 0; }
+                    html, body { height: 100% !important; margin: 0 !important; padding: 0 !important; background: white; }
+                    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
                     * {
                         font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
                     }
@@ -39,33 +39,33 @@ export default function ResumePage() {
                     }
                     #resume-content {
                         margin: 0 !important;
-                        padding: 0 !important;
-                        width: 100% !important;
-                        max-width: 100% !important;
-                        height: 100% !important;
+                        padding: 12mm 15mm 12mm 15mm !important;
+                        width: 210mm !important;
+                        height: 297mm !important;
                         box-shadow: none !important;
                         box-sizing: border-box !important;
                         overflow: hidden !important;
                         display: flex !important;
                         flex-direction: column !important;
+                        background: white !important;
                     }
                     .print-hide { display: none !important; }
-                    h1 { font-size: 14pt !important; margin-bottom: 0.3mm !important; }
-                    .role-title { font-size: 7.8pt !important; margin-bottom: 0.8mm !important; }
-                    h2 { font-size: 7.8pt !important; margin-top: 1mm !important; margin-bottom: 0.5mm !important; border-bottom-width: 1px !important; padding-bottom: 0.2mm !important; }
-                    h3 { font-size: 7.2pt !important; margin-bottom: 0.2mm !important; }
-                    p, li, span, div, a { font-size: 6.6pt !important; line-height: 1.15 !important; }
-                    section { margin-bottom: 0.8mm !important; }
-                    ul { margin-top: 0.2mm !important; padding-left: 2.5mm !important; }
-                    li { margin-bottom: 0.2mm !important; }
+                    h1 { font-size: 15.5pt !important; margin-bottom: 0.5mm !important; }
+                    .role-title { font-size: 8.5pt !important; margin-bottom: 1.2mm !important; }
+                    h2 { font-size: 8.8pt !important; margin-top: 2.2mm !important; margin-bottom: 1mm !important; border-bottom-width: 1px !important; padding-bottom: 0.3mm !important; }
+                    h3 { font-size: 8.2pt !important; margin-bottom: 0.3mm !important; }
+                    p, li, span, div, a { font-size: 7.3pt !important; line-height: 1.22 !important; }
+                    section { margin-bottom: 1.8mm !important; }
+                    ul { margin-top: 0.4mm !important; padding-left: 3mm !important; }
+                    li { margin-bottom: 0.4mm !important; }
                     
                     /* Override Tailwind spacing for print */
-                    #resume-content .space-y-3 > * + * { margin-top: 0.6mm !important; }
-                    #resume-content .space-y-2 > * + * { margin-top: 0.5mm !important; }
-                    #resume-content .space-y-4 > * + * { margin-top: 0.8mm !important; }
-                    #resume-content .grid-cols-2 { gap: 4mm !important; }
-                    #resume-content header { padding-bottom: 0.5mm !important; margin-bottom: 1mm !important; }
-                    #resume-content .pl-2.5 { padding-left: 1.2mm !important; margin-top: 0.3mm !important; }
+                    #resume-content .space-y-3 > * + * { margin-top: 1mm !important; }
+                    #resume-content .space-y-2 > * + * { margin-top: 0.8mm !important; }
+                    #resume-content .space-y-4 > * + * { margin-top: 1.2mm !important; }
+                    #resume-content .grid-cols-2 { gap: 5mm !important; }
+                    #resume-content header { padding-bottom: 0.8mm !important; margin-bottom: 1.5mm !important; }
+                    #resume-content .pl-2.5 { padding-left: 1.5mm !important; margin-top: 0.4mm !important; }
                 }
             `}</style>
 
