@@ -128,7 +128,7 @@ export default function ResumePage() {
                         <span className="text-gray-300 print:text-gray-400">•</span>
                         <a href="https://mr-vvm-2005.github.io/New-portfolio/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">Portfolio</a>
                         <span className="text-gray-300 print:text-gray-400">•</span>
-                        <span className="print:text-gray-800">Tenkasi, Tamil Nadu, India</span>
+                        <a href="https://maps.google.com/?q=Tenkasi,+Tamil+Nadu,+India" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 print:text-gray-800 print:no-underline">Tenkasi, Tamil Nadu, India</a>
                     </div>
                 </header>
 
