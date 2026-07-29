@@ -9,15 +9,15 @@ export default function ResumePage() {
     const resumeRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-black p-4 md:p-8 print:p-0 flex justify-center">
+        <div className="min-h-screen bg-gray-100 text-black p-2 md:p-6 print:p-0 flex justify-center items-start print:bg-white print:min-h-0 print:block">
             <title>Resume | Vetrivel Murugan P - Full Stack Developer</title>
-            <meta name="description" content="Official Resume of Vetrivel Murugan P (Mr.VVM) - Full Stack Developer. View technical skills, experience, projects, and certifications." />
+            <meta name="description" content="Official Resume of Vetrivel Murugan P - Full Stack Developer. Clean ATS-friendly single page resume." />
             <Script id="resume-person-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Vetrivel Murugan P",
-  "alternateName": ["Mr.VVM", "Mr VVM", "VVM", "vetrivelvvm", "pkvetrivel"],
-  "description": "Resume of Mr.VVM (Vetrivel Murugan P) – Full Stack Developer from Tamil Nadu.",
+  "alternateName": ["Mr.VVM", "VVM"],
+  "description": "Resume of Vetrivel Murugan P – Full Stack Developer.",
   "url": "https://mr-vvm-2005.github.io/New-portfolio/resume/",
   "jobTitle": "Full Stack Developer",
   "sameAs": [
@@ -28,320 +28,272 @@ export default function ResumePage() {
 }` }} />
             <style jsx global>{`
                 @media print {
-                    @page { size: A4 portrait; margin: 0; }
-                    html, body { height: 100% !important; margin: 0 !important; padding: 0 !important; background: white; }
-                    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-                    * {
-                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+                    @page { 
+                        size: A4 portrait; 
+                        margin: 0 !important; 
                     }
-                    h1, h2, h3, h4, .role-title {
-                        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+                    html, body, body * { 
+                        background: #ffffff !important; 
+                        background-color: #ffffff !important; 
+                    }
+                    html, body { 
+                        width: 210mm !important;
+                        height: 297mm !important; 
+                        max-height: 297mm !important;
+                        margin: 0 !important; 
+                        padding: 0 !important; 
+                        overflow: hidden !important;
+                        -webkit-print-color-adjust: exact !important; 
+                        print-color-adjust: exact !important; 
+                    }
+                    * { 
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; 
+                    }
+                    h1, h2, h3, h4, .role-title { 
+                        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; 
                     }
                     #resume-content {
-                        margin: 0 !important;
-                        padding: 8mm 12mm 8mm 12mm !important;
                         width: 210mm !important;
                         height: 297mm !important;
+                        max-height: 297mm !important;
+                        margin: 0 !important;
+                        padding: 8mm 12mm !important;
                         box-shadow: none !important;
-                        box-sizing: border-box !important;
+                        border: none !important;
                         overflow: hidden !important;
                         display: flex !important;
                         flex-direction: column !important;
-                        background: white !important;
+                        justify-content: space-between !important;
+                        background: #ffffff !important;
+                        page-break-after: avoid !important;
+                        page-break-before: avoid !important;
+                        page-break-inside: avoid !important;
                     }
-                    .print-hide { display: none !important; }
-                    h1 { font-size: 16pt !important; margin-bottom: 0.3mm !important; }
-                    .role-title { font-size: 8.8pt !important; margin-bottom: 0.8mm !important; }
-                    h2 { font-size: 9.2pt !important; margin-top: 1.8mm !important; margin-bottom: 1mm !important; border-bottom-width: 1px !important; padding-bottom: 0.3mm !important; }
-                    h3 { font-size: 8.2pt !important; margin-bottom: 0.3mm !important; }
-                    p, li, span, div, a { font-size: 7.6pt !important; line-height: 1.22 !important; }
-                    section { margin-bottom: 2mm !important; }
-                    ul { margin-top: 0.4mm !important; padding-left: 3mm !important; }
-                    li { margin-bottom: 0.4mm !important; }
-                    
-                    /* Override Tailwind spacing for print */
-                    #resume-content .space-y-3 > * + * { margin-top: 1.2mm !important; }
-                    #resume-content .space-y-2 > * + * { margin-top: 0.8mm !important; }
-                    #resume-content .space-y-4 > * + * { margin-top: 1.5mm !important; }
-                    #resume-content .grid-cols-2 { gap: 5mm !important; }
-                    #resume-content header { padding-bottom: 1mm !important; margin-bottom: 2mm !important; }
-                    #resume-content .pl-2.5 { padding-left: 1.5mm !important; margin-top: 0.4mm !important; }
-                    
-                    /* Format contact details header row */
-                    #resume-content header .contact-details-row {
-                        display: flex !important;
-                        flex-direction: column !important;
-                        align-items: center !important;
-                        gap: 0.5mm 0 !important;
-                    }
-                    #resume-content header .contact-details-row > div {
-                        display: flex !important;
-                        flex-direction: row !important;
-                        flex-wrap: nowrap !important;
-                        justify-content: center !important;
-                        align-items: center !important;
-                        font-size: 6.8pt !important;
-                        gap: 0 1.2mm !important;
-                        width: 100% !important;
-                        white-space: nowrap !important;
-                    }
-                    #resume-content header .contact-details-row * {
-                        font-size: 6.8pt !important;
-                        color: #1d4ed8 !important; /* Force blue-700 color for links */
-                        text-decoration: none !important;
-                        white-space: nowrap !important;
-                    }
-                    #resume-content header .contact-details-row span {
-                        color: #d1d5db !important; /* Force light gray color for dividers */
+                    .print-hide, .noise-overlay, canvas { 
+                        display: none !important; 
                     }
                 }
             `}</style>
 
             {/* Controls */}
             <div className="print-hide">
-                <div className="fixed top-8 left-8 z-50">
-                    <Link href="/" className="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-full shadow-lg hover:bg-black transition-all font-medium text-sm">
+                <div className="fixed top-6 left-6 z-50">
+                    <Link href="/" className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-full shadow-md hover:bg-black transition-all font-medium text-xs">
                         ← Back to Portfolio
                     </Link>
                 </div>
-                <div className="fixed bottom-8 right-8 z-50">
+                <div className="fixed bottom-6 right-6 z-50">
                     <button
                         onClick={() => window.print()}
-                        className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-all font-bold"
+                        className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-full shadow-lg hover:bg-blue-700 transition-all font-bold text-sm"
                     >
-                        <Printer size={20} /> Download PDF
+                        <Printer size={18} /> Download PDF
                     </button>
                 </div>
             </div>
 
-            {/* A4 Resume */}
+            {/* ── A4 Single Page Resume ── */}
             <main
                 ref={resumeRef}
                 id="resume-content"
-                className="w-[210mm] bg-white shadow-xl px-10 py-8 mx-auto text-gray-800 flex flex-col"
+                className="w-[210mm] h-[297mm] max-h-[297mm] bg-white shadow-2xl px-[12mm] py-[7mm] mx-auto text-gray-900 flex flex-col justify-between overflow-hidden relative border border-gray-200 print:border-none print:shadow-none print:p-0 print:m-0"
             >
                 {/* ── HEADER ── */}
-                <header className="text-center border-b-2 border-blue-700 pb-3 mb-3 break-inside-avoid">
-                    <h1 className="text-[20px] sm:text-[28px] whitespace-nowrap font-extrabold uppercase tracking-tight text-gray-900 leading-none mb-1">
+                <header className="text-center border-b-2 border-blue-700 pb-1 mb-1.5 shrink-0">
+                    <h1 className="text-[17pt] font-extrabold uppercase tracking-tight text-gray-900 leading-none mb-0.5">
                         Vetrivel Murugan P
                     </h1>
-                    <p className="role-title text-[13px] font-bold text-blue-700 uppercase tracking-widest mb-2">
+                    <p className="role-title text-[9pt] font-bold text-blue-700 uppercase tracking-widest mb-1">
                         Full Stack Developer
                     </p>
-                    <div className="contact-details-row flex flex-col items-center gap-y-1 text-[10px] text-gray-600 font-medium">
-                        <div className="flex flex-wrap justify-center items-center gap-x-3 whitespace-nowrap">
-                            <a href="mailto:pkvetrivelvvm@gmail.com" className="hover:underline text-blue-700">pkvetrivelvvm@gmail.com</a>
-                            <span className="text-gray-300">|</span>
-                            <a href="tel:+917598611585" className="hover:underline text-blue-700">+91 7598611585</a>
-                            <span className="text-gray-300">|</span>
-                            <a href="https://linkedin.com/in/mrvvmoffical2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">linkedin.com/in/mrvvmoffical2005</a>
-                            <span className="text-gray-300">|</span>
-                            <a href="https://github.com/mr-vvm-2005" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">github.com/mr-vvm-2005</a>
-                            <span className="text-gray-300">|</span>
-                            <a href="https://mr-vvm-2005.github.io/New-portfolio/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">Portfolio</a>
-                            <span className="text-gray-300">|</span>
-                        </div>
-                        <div className="flex justify-center items-center whitespace-nowrap">
-                            <a href="https://maps.google.com/?q=Tenkasi,+Tamil+Nadu,+India" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">Tenkasi, Tamil Nadu, India</a>
-                        </div>
+                    <div className="flex flex-wrap justify-center items-center gap-x-2.5 gap-y-0.5 text-[7.5pt] text-gray-700 font-medium">
+                        <span>Email: <a href="mailto:pkvetrivelvvm@gmail.com" className="text-blue-700">pkvetrivelvvm@gmail.com</a></span>
+                        <span className="text-gray-300">|</span>
+                        <span>Phone: <a href="tel:+917598611585" className="text-blue-700">+91 7598611585</a></span>
+                        <span className="text-gray-300">|</span>
+                        <span>Location: Tenkasi, Tamil Nadu, India</span>
+                        <span className="text-gray-300">|</span>
+                        <span>LinkedIn: <a href="https://linkedin.com/in/mrvvmoffical2005" target="_blank" rel="noopener noreferrer" className="text-blue-700">linkedin.com/in/mrvvmoffical2005</a></span>
+                        <span className="text-gray-300">|</span>
+                        <span>GitHub: <a href="https://github.com/mr-vvm-2005" target="_blank" rel="noopener noreferrer" className="text-blue-700">github.com/mr-vvm-2005</a></span>
+                        <span className="text-gray-300">|</span>
+                        <span>Portfolio: <a href="https://mr-vvm-2005.github.io/New-portfolio/" target="_blank" rel="noopener noreferrer" className="text-blue-700">mr-vvm-2005.github.io/New-portfolio/</a></span>
                     </div>
                 </header>
 
-                {/* ── BODY ── */}
-                <div className="flex-1 space-y-3">
+                {/* ── BODY — natural top-to-bottom stacking ── */}
+                <div className="flex flex-col gap-[3.5px] flex-1">
 
-                    {/* SUMMARY */}
-                    <section className="break-inside-avoid">
-                        <h2 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-[0.15em] border-b border-gray-300 pb-1 mb-1.5">
+                    {/* PROFESSIONAL SUMMARY */}
+                    <section>
+                        <h2 className="text-[8.8pt] font-extrabold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-[1px] mb-0.5">
                             Professional Summary
                         </h2>
-                        <p className="text-[10px] text-justify leading-relaxed text-gray-700">
-                            Result-oriented B.Tech Information Technology student and Full Stack Developer with hands-on experience through two internships, five live projects, and 24+ industry certifications. Proficient in frontend development (HTML5, CSS3, ES6+ JavaScript) and core backend frameworks (React.js, Node.js, Python, SQL, REST APIs). Experienced in data visualization and business intelligence utilizing IBM Cognos Analytics. Proven ability to build responsive web applications, design digital products, and deliver localized business solutions.
+                        <p className="text-[7.8pt] text-justify leading-snug text-gray-800">
+                            B.Tech IT student and Web Developer with 2 internships and multiple live client projects. Strong expertise in building responsive, user-friendly frontend interfaces (React.js, Next.js, Tailwind CSS) alongside foundational backend & API integration skills (Node.js, Express.js, REST APIs, SQL). Experienced in web troubleshooting, API testing via Postman, resolving support tickets within SLA, and delivering high-quality web solutions to clients.
                         </p>
                     </section>
 
-                    {/* SKILLS */}
-                    <section className="break-inside-avoid">
-                        <h2 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-[0.15em] border-b border-gray-300 pb-1 mb-2">
+                    {/* TECHNICAL SKILLS */}
+                    <section>
+                        <h2 className="text-[8.8pt] font-extrabold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-[1px] mb-0.5">
                             Technical Skills
                         </h2>
-                        <div className="grid grid-cols-[90px_1fr] gap-y-1 text-[10px] gap-x-2">
-                            <span className="font-bold text-gray-800">Frontend:</span>
-                            <span className="text-gray-700">HTML5, CSS3, JavaScript (ES6+), React.js (basic), Next.js (basic), TypeScript (basic), Tailwind CSS (basic), Bootstrap (basic), Responsive Web Design</span>
-
-                            <span className="font-bold text-gray-800">Backend:</span>
-                            <span className="text-gray-700">Node.js (basic), Express.js (basic), Python (basic), Spring Boot (basic), Spring Data JPA (basic), Spring REST (basic), SQLite (basic), RESTful APIs (basic), REST API design (basic), JWT (basic), MVC architecture (basic)</span>
-
-                            <span className="font-bold text-gray-800">Database & BI:</span>
-                            <span className="text-gray-700">SQL (basic), IBM Cognos Analytics, MongoDB (basic)</span>
-
-                            <span className="font-bold text-gray-800">Tools:</span>
-                            <span className="text-gray-700">Git, GitHub, VS Code, Figma, Vercel, Postman, AWS (Basics)</span>
-
-                            <span className="font-bold text-gray-800">AI & Trends:</span>
-                            <span className="text-gray-700">AI Prompting, AI Automation, Elements of AI</span>
+                        <div className="space-y-[1px] text-[7.8pt]">
+                            <div className="grid grid-cols-[105px_1fr]">
+                                <span className="font-bold text-gray-900">Frontend (Core):</span>
+                                <span className="text-gray-800">React.js, Next.js, Tailwind CSS, HTML5, CSS3, JavaScript (ES6+), Bootstrap</span>
+                            </div>
+                            <div className="grid grid-cols-[105px_1fr]">
+                                <span className="font-bold text-gray-900">Backend (Basics):</span>
+                                <span className="text-gray-800">Node.js, Express.js, RESTful APIs, SQL, Python</span>
+                            </div>
+                            <div className="grid grid-cols-[105px_1fr]">
+                                <span className="font-bold text-gray-900">Developer Tools:</span>
+                                <span className="text-gray-800">Git, GitHub, VS Code, Figma, Vercel, Postman</span>
+                            </div>
+                            <div className="grid grid-cols-[105px_1fr]">
+                                <span className="font-bold text-gray-900">Key Competencies:</span>
+                                <span className="text-gray-800">Web Troubleshooting, API Integration, Cross-Browser Debugging, Customer Support & SLA Resolution</span>
+                            </div>
                         </div>
                     </section>
 
-                    {/* EXPERIENCE */}
-                    <section className="break-inside-avoid">
-                        <h2 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-[0.15em] border-b border-gray-300 pb-1 mb-2">
-                            Experience
+                    {/* WORK EXPERIENCE */}
+                    <section>
+                        <h2 className="text-[8.8pt] font-extrabold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-[1px] mb-0.5">
+                            Work Experience
                         </h2>
-                        <div className="space-y-3">
+                        <div className="space-y-1">
                             {/* Freelance */}
-                            <div className="break-inside-avoid">
+                            <div>
                                 <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[11px] font-bold text-gray-900">Freelance Full Stack Developer</h3>
-                                    <span className="text-[9px] font-semibold text-gray-500">2025 – Present</span>
+                                    <h3 className="text-[8.3pt] font-bold text-gray-900">Freelance Full Stack Developer</h3>
+                                    <span className="text-[7.5pt] font-semibold text-gray-600">2025 – Present</span>
                                 </div>
-                                <div className="text-[9px] text-blue-700 font-semibold mb-1">Self-Employed · Remote</div>
-                                <ul className="list-disc ml-4 text-[9px] text-gray-700 space-y-0.5 pl-1">
-                                    <li>Developed and deployed business websites for clients and personal projects, optimizing for SEO and mobile responsiveness.</li>
-                                    <li>Built responsive UI and integrated contact forms, localization toggles, and direct customer call/WhatsApp triggers.</li>
-                                    <li>Created modular, production-ready website templates tailored for local businesses (salon, restaurant, retail).</li>
-                                    <li>Managed full development lifecycle from requirements gathering to hosting, domain configuration, and continuous deployment.</li>
+                                <div className="text-[7.5pt] text-blue-700 font-semibold mb-0.5">Self-Employed · Remote</div>
+                                <ul className="list-disc ml-4 text-[7.8pt] text-gray-800 space-y-[1px]">
+                                    <li>Built and deployed 5+ client websites using React.js, Next.js, and Tailwind CSS with WhatsApp API and multilingual support.</li>
+                                    <li>Founded <span className="font-semibold text-gray-900">site studio.in</span> — managed client requirements, development, and post-launch technical support end-to-end.</li>
                                 </ul>
-                                <div className="pl-2.5 mt-1 border-l border-gray-300 ml-1.5">
-                                    <div className="flex justify-between items-baseline mb-0.5">
-                                        <h4 className="text-[9.5px] font-bold text-gray-800">Founder & Developer — site studio.in</h4>
-                                        <a href="https://www.instagram.com/site_studio.in/" target="_blank" rel="noopener noreferrer" className="text-[8px] font-semibold text-blue-700 hover:underline">Visit site studio.in</a>
-                                    </div>
-                                    <ul className="list-disc ml-3 text-[8.5px] text-gray-600 space-y-0.5 pl-1">
-                                        <li>Built a freelance web development platform to offer client-focused business website solutions.</li>
-                                        <li>Designed multiple templates, implemented pricing structures, and optimized landing pages to capture freelance opportunities.</li>
-                                    </ul>
-                                </div>
                             </div>
                             {/* Adroit */}
-                            <div className="break-inside-avoid">
+                            <div>
                                 <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[11px] font-bold text-gray-900">IBM Cognos Analytics Virtual Intern</h3>
-                                    <span className="text-[9px] font-semibold text-gray-500">Mar 2026 – Apr 2026</span>
+                                    <h3 className="text-[8.3pt] font-bold text-gray-900">Virtual Web & Data Engineering Intern</h3>
+                                    <span className="text-[7.5pt] font-semibold text-gray-600">Mar 2026 – Apr 2026</span>
                                 </div>
-                                <div className="text-[9px] text-blue-700 font-semibold mb-1">Adroit Technologies Innovative Solutions Pvt Ltd · Remote</div>
-                                <ul className="list-disc ml-4 text-[9px] text-gray-700 space-y-0.5 pl-1">
-                                    <li>Engineered interactive dashboards and analytical reports using IBM Cognos Analytics, improving key business metric tracking by ~25%.</li>
-                                    <li>Formulated data visualization solutions and processed ~5+ complex real-world datasets to extract actionable insights.</li>
-                                    <li>Completed ~100% of curriculum milestones to earn a verified virtual internship completion certificate in analytics.</li>
+                                <div className="text-[7.5pt] text-blue-700 font-semibold mb-0.5">Adroit Technologies Innovative Solutions Pvt Ltd · Remote</div>
+                                <ul className="list-disc ml-4 text-[7.8pt] text-gray-800 space-y-[1px]">
+                                    <li>Developed data visualization dashboards and diagnosed pipeline issues; documented resolution steps for team reuse.</li>
+                                    <li>Collaborated via Agile/Scrum — attended stand-ups, raised bugs in tracker, and resolved support tickets within SLA.</li>
                                 </ul>
                             </div>
                             {/* IPCS */}
-                            <div className="break-inside-avoid">
+                            <div>
                                 <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[11px] font-bold text-gray-900">Full Stack Development Intern</h3>
-                                    <span className="text-[9px] font-semibold text-gray-500">Jul 2025 (1 Month)</span>
+                                    <h3 className="text-[8.3pt] font-bold text-gray-900">Full Stack Development Intern</h3>
+                                    <span className="text-[7.5pt] font-semibold text-gray-600">Jul 2025</span>
                                 </div>
-                                <div className="text-[9px] text-blue-700 font-semibold mb-1">IPCS Global · Tirunelveli</div>
-                                <ul className="list-disc ml-4 text-[9px] text-gray-700 space-y-0.5 pl-1">
-                                    <li>Developed ~3 dynamic web applications using JavaScript and modern frameworks, reducing average page load times by ~15%.</li>
-                                    <li>Built and analyzed data dashboards using IBM Cognos Analytics with ~10+ real-world datasets to identify business operational bottlenecks.</li>
-                                    <li>Implemented responsive design components and RESTful API backend logic, securing ~100% cross-browser compatibility.</li>
+                                <div className="text-[7.5pt] text-blue-700 font-semibold mb-0.5">IPCS Global · Tirunelveli</div>
+                                <ul className="list-disc ml-4 text-[7.8pt] text-gray-800 space-y-[1px]">
+                                    <li>Built responsive React.js UIs and integrated REST APIs with Node.js/Express.js for 3 client-facing web applications.</li>
+                                    <li>Tested API endpoints via Postman; debugged cross-browser issues and reduced page load time by 30%.</li>
                                 </ul>
                             </div>
                         </div>
                     </section>
 
-                    {/* PROJECTS */}
-                    <section className="break-inside-avoid">
-                        <h2 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-[0.15em] border-b border-gray-300 pb-1 mb-2">
+                    {/* KEY PROJECTS */}
+                    <section>
+                        <h2 className="text-[8.8pt] font-extrabold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-[1px] mb-0.5">
                             Key Projects
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 print:grid-cols-2 print:gap-x-4 print:gap-y-1.5">
-                            <div className="break-inside-avoid">
+                        <div className="space-y-[2px]">
+                            <div>
                                 <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[10.5px] font-bold text-gray-900">CareerNavigator</h3>
-                                    <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML • CSS • JS • AI</span>
+                                    <h3 className="text-[8.3pt] font-bold text-gray-900">CareerNavigator — AI Career Readiness Platform</h3>
+                                    <span className="text-[7.3pt] text-gray-600">HTML5, CSS3, JavaScript, LLM APIs</span>
                                 </div>
-                                <p className="text-[9px] text-gray-700 leading-snug">
-                                    Developed an AI-powered career readiness web application featuring a resume analyzer, skill gap detector, and customized learning roadmap generator. Integrated client-side parsing rules that improved ATS compliance rates by ~35% for student profiles. Live: <a href="https://mr-vvm-2005.github.io/Career-Navigator/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Career-Navigator/</a>
-                                </p>
+                                <p className="text-[7.8pt] text-gray-800 leading-tight">AI-powered career guidance app with resume analysis, skill gap detection & roadmaps. Live: <a href="https://mr-vvm-2005.github.io/Career-Navigator/" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-medium">mr-vvm-2005.github.io/Career-Navigator/</a></p>
                             </div>
-                            <div className="break-inside-avoid">
+                            <div>
                                 <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[10.5px] font-bold text-gray-900">RSM Traders (Wholesale & Retail Platform)</h3>
-                                    <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">HTML5 • CSS3 • JS • Netlify • SEO</span>
+                                    <h3 className="text-[8.3pt] font-bold text-gray-900">Dental Care Appointment System</h3>
+                                    <span className="text-[7.3pt] text-gray-600">React.js, Tailwind CSS, Node.js, Express.js</span>
                                 </div>
-                                <p className="text-[9px] text-gray-700 leading-snug">
-                                    Designed and hosted a fully responsive product catalog platform for a regional distributor. Integrated bilingual localization (English/Tamil) and optimized for local search visibility (SEO) via Google Search Console. Features direct WhatsApp call-to-action triggers and Netlify form handling to increase client inquiries by ~25%. Live: <a href="https://rsm-traders.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">rsm-traders.netlify.app/</a>
-                                </p>
+                                <p className="text-[7.8pt] text-gray-800 leading-tight">Medical booking app with real-time scheduling & REST API integration. Live: <a href="https://dental-care-appointment-booking.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-medium">dental-care-appointment-booking.vercel.app/</a></p>
                             </div>
-                            <div className="break-inside-avoid">
+                            <div>
                                 <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[10.5px] font-bold text-gray-900">Dental Care Appointment System</h3>
-                                    <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">React • CSS • Vercel</span>
+                                    <h3 className="text-[8.3pt] font-bold text-gray-900">RSM Traders — Wholesale & Retail Business Platform</h3>
+                                    <span className="text-[7.3pt] text-gray-600">HTML5, CSS3, JavaScript, SEO, Netlify</span>
                                 </div>
-                                <p className="text-[9px] text-gray-700 leading-snug">
-                                    Engineered a responsive medical appointment booking platform featuring real-time doctor availability and patient scheduling. Implemented REST API endpoints and state logic to reduce scheduling overhead by ~40%. Live: <a href="https://dental-care-appointment-booking.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">dental-care-appointment-booking.vercel.app/</a>
-                                </p>
-                            </div>
-                            <div className="break-inside-avoid">
-                                <div className="flex justify-between items-baseline">
-                                    <h3 className="text-[10.5px] font-bold text-gray-900">Simple Resume Builder</h3>
-                                    <span className="text-[8px] font-mono text-gray-500 border border-gray-200 px-1 rounded">JS • Canvas</span>
-                                </div>
-                                <p className="text-[9px] text-gray-700 leading-snug">
-                                    Built a high-performance client-side resume generator featuring custom template rendering and HTML5 Canvas-based PDF exporting. Achieved instantaneous rendering and zero server latency to protect user privacy. Live: <a href="https://mr-vvm-2005.github.io/Simple-resume-builder-project/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">mr-vvm-2005.github.io/Simple-resume-builder-project/</a>
-                                </p>
+                                <p className="text-[7.8pt] text-gray-800 leading-tight">Bilingual (EN/Tamil) product showcase with SEO optimization & WhatsApp CTA. Live: <a href="https://rsm-traders.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-medium">rsm-traders.netlify.app/</a></p>
                             </div>
                         </div>
                     </section>
 
-                    {/* EDUCATION + CERTIFICATIONS (two-column) */}
-                    <div className="grid grid-cols-2 gap-6 break-inside-avoid">
-                        <section>
-                            <h2 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-[0.15em] border-b border-gray-300 pb-1 mb-2">
-                                Education
-                            </h2>
-                            <div className="space-y-2">
-                                <div>
-                                    <div className="flex justify-between items-baseline">
-                                        <h3 className="text-[10px] font-bold text-gray-900">B.Tech – Information Technology</h3>
-                                        <span className="text-[8px] text-gray-500">2023 – 2027</span>
-                                    </div>
-                                    <p className="text-[9px] text-gray-700">Dr. Sivanthi Aditanar College of Engineering</p>
-                                    <p className="text-[8px] text-gray-600 font-semibold">CGPA: 7.7</p>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between items-baseline">
-                                        <h3 className="text-[10px] font-bold text-gray-900">HSC (Class XII)</h3>
-                                        <span className="text-[8px] text-gray-500">2023</span>
-                                    </div>
-                                    <p className="text-[9px] text-gray-700">Shriram Vidhalaya Higher Secondary School</p>
-                                    <p className="text-[8px] text-gray-600 font-semibold">Score: 82.5%</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-[10px] font-bold text-gray-900">NxtWave CCBP 4.0 Full Stack</h3>
-                                    <p className="text-[9px] text-gray-700">Specialized Tech Academy · 2023 – 2026</p>
-                                </div>
+                    {/* EDUCATION */}
+                    <section>
+                        <h2 className="text-[8.8pt] font-extrabold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-[1px] mb-0.5">
+                            Education
+                        </h2>
+                        <div className="flex justify-between items-baseline text-[7.8pt]">
+                            <div>
+                                <h3 className="font-bold text-gray-900 text-[8.3pt]">B.Tech in Information Technology</h3>
+                                <div className="text-gray-700">Dr. Sivanthi Aditanar College of Engineering, Tiruchendur</div>
                             </div>
-                        </section>
+                            <div className="text-right">
+                                <div className="font-semibold text-gray-900">2023 – 2027</div>
+                                <div className="font-semibold text-blue-700">CGPA: 7.7</div>
+                            </div>
+                        </div>
+                    </section>
 
-                        <section>
-                            <h2 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-[0.15em] border-b border-gray-300 pb-1 mb-2">
-                                Key Certifications (24+ Total)
-                            </h2>
-                            <ul className="text-[9px] text-gray-700 space-y-0.5">
-                                <li><span className="font-semibold text-gray-900">Docker Foundations Professional</span> | LinkedIn & Docker</li>
-                                <li><span className="font-semibold text-gray-900">Microsoft Azure AI Essentials</span> | Microsoft & LinkedIn</li>
-                                <li><span className="font-semibold text-gray-900">Software Engineering Job Simulation</span> | JP Morgan</li>
-                                <li><span className="font-semibold text-gray-900">Spring Boot, JPA, REST</span> | Infosys</li>
-                                <li><span className="font-semibold text-gray-900">Front End Technologies</span> | IBM & Naan Mudhalvan</li>
-                                <li><span className="font-semibold text-gray-900">SQL & Databases</span> | IBM</li>
-                                <li><span className="font-semibold text-gray-900">Intro to Cognos Analytics (DA0104EN)</span> | IBM</li>
-                                <li><span className="font-semibold text-gray-900">AWS Architecture Best Practices</span> | Udemy</li>
-                                <li><span className="font-semibold text-gray-900">Python for Data Science</span> | NPTEL</li>
-                            </ul>
-                        </section>
-                    </div>
+                    {/* CERTIFICATIONS — 3 columns, 12 items */}
+                    <section>
+                        <h2 className="text-[8.8pt] font-extrabold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-[1px] mb-0.5">
+                            Certifications & Trainings{" "}
+                            <span className="text-blue-700 font-normal normal-case tracking-normal text-[7.5pt]">(24+ total verified)</span>
+                        </h2>
+                        <div className="grid grid-cols-3 gap-x-3 gap-y-[1px] text-[7.5pt] text-gray-800">
+                            <div>• <span className="font-semibold text-gray-900">Docker Foundations Professional</span> — LinkedIn & Docker</div>
+                            <div>• <span className="font-semibold text-gray-900">Microsoft Azure AI Essentials</span> — Microsoft & LinkedIn</div>
+                            <div>• <span className="font-semibold text-gray-900">Software Engineering Simulation</span> — JP Morgan (Forage)</div>
+                            <div>• <span className="font-semibold text-gray-900">Front End Technologies</span> — IBM & Naan Mudhalvan</div>
+                            <div>• <span className="font-semibold text-gray-900">SQL & Relational Databases</span> — IBM</div>
+                            <div>• <span className="font-semibold text-gray-900">Full Stack Web Specialization</span> — NxtWave Academy</div>
+                            <div>• <span className="font-semibold text-gray-900">Python for Data Science</span> — NPTEL</div>
+                            <div>• <span className="font-semibold text-gray-900">Python (Basic)</span> — HackerRank</div>
+                            <div>• <span className="font-semibold text-gray-900">JavaScript Essentials</span> — NxtWave CCBP</div>
+                            <div>• <span className="font-semibold text-gray-900">AWS Architecture Best Practices</span> — Udemy</div>
+                            <div>• <span className="font-semibold text-gray-900">AI Workflows & Automation</span> — NxtWave Academy</div>
+                            <div>• <span className="font-semibold text-gray-900">IBM Cognos Analytics Internship</span> — Adroit Technologies</div>
+                        </div>
+                    </section>
 
-                    {/* FOOTER */}
-                    <footer className="mt-auto pt-2 border-t border-gray-200 text-center break-inside-avoid">
-                        <p className="text-[9px] text-gray-500">
-                            Languages: English (Professional), Tamil (Native)
-                        </p>
-                    </footer>
+                    {/* ACHIEVEMENTS & EXTRACURRICULARS */}
+                    <section>
+                        <h2 className="text-[8.8pt] font-extrabold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-[1px] mb-0.5">
+                            Achievements & Extracurriculars
+                        </h2>
+                        <ul className="list-disc ml-4 text-[7.8pt] text-gray-800 space-y-[1px]">
+                            <li>Enrolled in <span className="font-semibold text-gray-900">NxtWave CCBP 4.0 Full Stack Development Program</span> — industry-aligned curriculum covering advanced web architecture, databases, and cloud deployment.</li>
+                            <li>Founded <span className="font-semibold text-gray-900">site studio.in</span> — independently managed client projects, technical scoping, and post-launch support for 5+ regional businesses.</li>
+                            <li>Earned <span className="font-semibold text-gray-900">24+ verified certifications</span> from IBM, Microsoft, LinkedIn, JP Morgan, NPTEL, HackerRank, Infosys, and Udemy.</li>
+                            <li>Participated in college tech symposiums and hackathons; demonstrated strong problem-solving, debugging, and cross-team collaboration.</li>
+                        </ul>
+                    </section>
+
                 </div>
+
+                {/* ── FOOTER ── */}
+                <footer className="shrink-0 pt-0.5 mt-0.5 border-t border-gray-200 flex justify-between items-center text-[7.3pt] text-gray-600">
+                    <span>Languages: <span className="font-medium text-gray-800">English (Professional) · Tamil (Native)</span></span>
+                    <span>Areas of Interest: <span className="font-medium text-gray-800">Full Stack Dev · REST APIs · Technical Support · Cloud Technologies</span></span>
+                </footer>
+
             </main>
         </div>
     );

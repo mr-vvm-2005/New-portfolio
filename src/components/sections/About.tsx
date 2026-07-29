@@ -135,7 +135,7 @@ export default function About() {
                                 </p>
                                 <p>
                                     I have completed <span className="text-[#6C63FF] font-semibold">2 internships</span> — a Full Stack Development internship at{" "}
-                                    <span className="text-white border-b border-white/20">IPCS Global</span>, and a Virtual IBM Cognos Analytics internship at{" "}
+                                    <span className="text-white border-b border-white/20">IPCS Global</span>, and a Virtual Web & Data Engineering internship at{" "}
                                     <span className="text-white border-b border-white/20">Adroit Technologies</span>. I am also enrolled in the{" "}
                                     <span className="text-[#00D4FF]">NxtWave CCBP 4.0 Full Stack Program</span> to master advanced software architecture.
                                 </p>

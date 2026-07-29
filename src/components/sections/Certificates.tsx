@@ -81,13 +81,6 @@ const certificates = [
         link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7ioXvKEAiH99C_J.P.%20Morgan_mqT6L9D9K7nQv9z4D_1704256845321_completion_certificate.pdf",
     },
     {
-        title: "Elements of AI",
-        issuer: "University of Helsinki | Reaktor",
-        date: "2024",
-        category: "AI/ML" as Category,
-        link: "https://certificates.elementsofai.com/confirm/0a0a0a0a",
-    },
-    {
         title: "Developer Foundations",
         issuer: "CCBP Academy",
         date: "2024",
@@ -109,7 +102,7 @@ const certificates = [
         link: "https://s3-ap-south-1.amazonaws.com/nkb-backend-ccbp-media-static/certificates/share/KSHYBWWSWL.png",
     },
     {
-        title: "Python (Basic)",
+        title: "Python",
         issuer: "HackerRank",
         date: "2024",
         category: "Backend" as Category,
@@ -196,7 +189,7 @@ const certificates = [
         highlight: true,
     },
     {
-        title: "Basic AWS Architecture Best Practices",
+        title: "AWS Architecture Best Practices",
         issuer: "Udemy",
         date: "Feb 9, 2026",
         category: "Tools" as Category,

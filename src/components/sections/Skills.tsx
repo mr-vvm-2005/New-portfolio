@@ -3,21 +3,27 @@
 import { motion } from "framer-motion";
 
 const skills = [
-    { name: "HTML5",                emoji: "🌐", category: "Frontend",    level: 95, color: "#E34F26" },
-    { name: "CSS3",                 emoji: "🎨", category: "Frontend",    level: 90, color: "#1572B6" },
-    { name: "JavaScript",           emoji: "⚡", category: "Frontend",    level: 85, color: "#F7DF1E" },
-    { name: "ReactJS (Basic)",      emoji: "⚛️", category: "Frontend",    level: 50, color: "#61DAFB" },
-    { name: "Next.js (Basic)",      emoji: "▲",  category: "Frontend",    level: 40, color: "#ffffff" },
-    { name: "Tailwind CSS (Basic)", emoji: "💨", category: "Frontend",    level: 50, color: "#06B6D4" },
-    { name: "Python (Basic)",       emoji: "🐍", category: "Backend",     level: 45, color: "#3776AB" },
-    { name: "SQL (Basic)",          emoji: "🗄️", category: "Backend",     level: 45, color: "#4479A1" },
-    { name: "Node.js (Basic)",      emoji: "🟢", category: "Backend",     level: 40, color: "#339933" },
-    { name: "Git",                  emoji: "🔧", category: "Tools",       level: 85, color: "#F05032" },
-    { name: "AI Prompting",         emoji: "🤖", category: "Trends",      level: 90, color: "#8B5CF6" },
-    { name: "Editing",              emoji: "✂️", category: "Creative",    level: 85, color: "#D946EF" },
-    { name: "Photography",          emoji: "📷", category: "Creative",    level: 80, color: "#F59E0B" },
-    { name: "Communication",        emoji: "💬", category: "Soft Skills", level: 90, color: "#10B981" },
-    { name: "Social Media Marketing", emoji: "📣", category: "Marketing",  level: 85, color: "#EC4899" },
+    // Frontend
+    { name: "React.js",          emoji: "⚛️", category: "Frontend", level: 85, color: "#61DAFB" },
+    { name: "Next.js",           emoji: "▲",  category: "Frontend", level: 80, color: "#ffffff" },
+    { name: "Tailwind CSS",      emoji: "💨", category: "Frontend", level: 88, color: "#06B6D4" },
+    { name: "HTML5",             emoji: "🌐", category: "Frontend", level: 95, color: "#E34F26" },
+    { name: "CSS3",              emoji: "🎨", category: "Frontend", level: 90, color: "#1572B6" },
+    { name: "JavaScript (ES6+)", emoji: "⚡", category: "Frontend", level: 85, color: "#F7DF1E" },
+    { name: "Bootstrap",         emoji: "🅱️", category: "Frontend", level: 80, color: "#7952B3" },
+    // Backend
+    { name: "Node.js",           emoji: "🟢", category: "Backend",  level: 80, color: "#339933" },
+    { name: "Express.js",        emoji: "🚂", category: "Backend",  level: 78, color: "#888888" },
+    { name: "Python",            emoji: "🐍", category: "Backend",  level: 75, color: "#3776AB" },
+    { name: "SQL",               emoji: "🗄️", category: "Backend",  level: 75, color: "#4479A1" },
+    { name: "RESTful APIs",      emoji: "🔗", category: "Backend",  level: 82, color: "#FF6B35" },
+    // Tools
+    { name: "Git",               emoji: "🔧", category: "Tools",    level: 85, color: "#F05032" },
+    { name: "GitHub",            emoji: "🐙", category: "Tools",    level: 85, color: "#ffffff" },
+    { name: "VS Code",           emoji: "💻", category: "Tools",    level: 90, color: "#007ACC" },
+    { name: "Figma",             emoji: "🖌️", category: "Tools",    level: 75, color: "#F24E1E" },
+    { name: "Vercel",            emoji: "▲",  category: "Tools",    level: 80, color: "#ffffff" },
+    { name: "Postman",           emoji: "📮", category: "Tools",    level: 78, color: "#FF6C37" },
 ];
 
 export default function Skills() {

@@ -44,8 +44,8 @@ export default function Home() {
   "telephone": "+91-7598611585",
   "knowsAbout": [
     "HTML5", "CSS3", "JavaScript", "ReactJS", "Next.js",
-    "Node.js", "Python", "SQL", "Tailwind CSS", "Spring Boot",
-    "IBM Cognos Analytics", "Full Stack Development"
+    "Node.js", "Python", "SQL", "Tailwind CSS", "MongoDB",
+    "PostgreSQL", "Full Stack Development"
   ],
   "sameAs": [
     "https://www.linkedin.com/in/mrvvmoffical2005",
